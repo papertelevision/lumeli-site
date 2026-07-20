@@ -2,7 +2,7 @@
    Standalone static site: intentionally plain CSS, no build step. */
 
 :root {
-  --cream: #f7edd8;       /* site background — matches the hero artwork */
+  --cream: #fceed4;       /* site background */
   --cream-soft: #f9f3e4;  /* header + lifted section washes */
   --cream-deep: #f1e2c2;
   --linen: #faf7f2;
@@ -295,7 +295,7 @@ section { padding: 96px 0; }
 /* ── Footer: full-bleed artwork band ── */
 .footer {
   width: 100%;
-  aspect-ratio: 1774 / 729; /* shows the artwork edge to edge, uncropped */
+  aspect-ratio: 1774 / 707; /* shows the artwork edge to edge, uncropped */
   background: url('images/footer_bg.jpg') no-repeat center bottom / cover;
 }
 
