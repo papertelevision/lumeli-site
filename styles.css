@@ -303,7 +303,7 @@ section { padding: 96px 0; }
 }
 .footer-logo { display: block; width: min(250px, 30vw); height: auto; margin: 0 auto; }
 .footer-tag {
-  font-size: 15px; font-weight: 400; color: var(--clay);
+  font-size: 15px; font-weight: 400; color: #574e40;
   margin-top: 2px;
 }
 .footer-copyright {
