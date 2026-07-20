@@ -108,7 +108,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 }
 
 /* ── Hero ── */
-.hero { position: relative; padding: 56px 0 150px; }
+.hero { position: relative; padding: 56px 0 110px; }
 .hero .container { max-width: 1328px; } /* content edge matches the nav's */
 .hero-split {
   display: grid; grid-template-columns: 0.95fr 1.1fr;
@@ -212,6 +212,10 @@ section { padding: 96px 0; }
 }
 .moment-caption { font-size: 13.5px; color: var(--ink-soft); }
 .calm-close { color: var(--ink-soft); max-width: 40em; margin: 0 auto; }
+
+/* ── Showcase (mockup 1 after the Why copy) ── */
+.showcase { padding: 0 0 96px; }
+.showcase .mock-wrap { margin-top: 24px; }
 
 /* ── Client section ── */
 .client { text-align: center; }
