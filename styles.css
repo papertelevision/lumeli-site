@@ -242,6 +242,7 @@ section { padding: 96px 0; }
 .showcase-copy { text-align: left; }
 .showcase-copy .body-lg { margin: 0; }
 .showcase .mock-wrap { margin-top: 0; }
+.showcase .mock-viewport { margin: 0 0 0 auto; } /* hug the right edge */
 
 @media (max-width: 900px) {
   .showcase-split { grid-template-columns: 1fr; gap: 36px; }
