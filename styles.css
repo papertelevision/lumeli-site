@@ -155,7 +155,6 @@ section { padding: 96px 0; }
 .why .container { position: relative; }
 
 /* ── How-it-works beats ── */
-.how-intro { margin-bottom: 72px; }
 .beat {
   display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
   align-items: center; margin-bottom: 88px;
@@ -233,9 +232,20 @@ section { padding: 96px 0; }
   margin: 0 auto 36px;
 }
 
-/* ── Showcase (mockup 1 after the Why copy) ── */
-.showcase { padding: 0 0 96px; }
-.showcase .mock-wrap { margin-top: 24px; }
+/* ── Showcase: intro copy left, Signals mockup right ── */
+.showcase { padding: 24px 0 96px; }
+.showcase .container { max-width: 1328px; }
+.showcase-split {
+  display: grid; grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px; align-items: center;
+}
+.showcase-copy { text-align: left; }
+.showcase-copy .body-lg { margin: 0; }
+.showcase .mock-wrap { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .showcase-split { grid-template-columns: 1fr; gap: 36px; }
+}
 
 /* ── Client section ── */
 .client { text-align: center; }
