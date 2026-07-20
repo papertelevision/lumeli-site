@@ -2,6 +2,8 @@
    Standalone static site: intentionally plain CSS, no build step. */
 
 :root {
+  --cream: #f7edd8;       /* site background — matches the hero artwork */
+  --cream-deep: #f1e2c2;
   --linen: #faf7f2;
   --linen-deep: #f3eee5;
   --sage-panel: #eef0e9;
@@ -34,7 +36,7 @@ html { scroll-behavior: smooth; }
 
 body {
   position: relative;
-  background: var(--linen);
+  background: var(--cream);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
@@ -100,9 +102,10 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 /* ── Hero ── */
 .hero { position: relative; padding: 56px 0 90px; }
+.hero .container { max-width: 1128px; } /* content edge matches the nav's */
 .hero-split {
-  display: grid; grid-template-columns: 1.05fr 0.95fr;
-  gap: 56px; align-items: center;
+  display: grid; grid-template-columns: 0.95fr 1.1fr;
+  gap: 48px; align-items: center;
 }
 .hero-copy { text-align: left; }
 .hero-sub {
@@ -115,8 +118,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 }
 .hero-art img {
   display: block; width: 100%; height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lift);
+  /* the artwork's background matches the page — no frame, it just belongs */
 }
 
 @media (max-width: 820px) {
@@ -126,8 +128,8 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 /* ── Section rhythm & washes ── */
 section { padding: 96px 0; }
-.wash-deep { background: linear-gradient(180deg, var(--linen), var(--linen-deep) 30%, var(--linen-deep) 70%, var(--linen)); }
-.wash-sage { background: linear-gradient(180deg, var(--linen), var(--sage-panel) 16%, var(--sage-panel) 84%, var(--linen)); }
+.wash-deep { background: linear-gradient(180deg, var(--cream), var(--cream-deep) 30%, var(--cream-deep) 70%, var(--cream)); }
+.wash-sage { background: linear-gradient(180deg, var(--cream), var(--sage-panel) 16%, var(--sage-panel) 84%, var(--cream)); }
 
 /* ── How-it-works beats ── */
 .how-intro { margin-bottom: 72px; }
