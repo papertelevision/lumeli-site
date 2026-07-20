@@ -1,0 +1,32 @@
+// Lumeli marketing site — mockup scaling + gentle scroll reveals.
+
+// Scale each fixed-880px mockup stage to fit its responsive viewport.
+const DESIGN_WIDTH = 880
+for (const viewport of document.querySelectorAll('.mock-viewport')) {
+  const stage = viewport.querySelector('.mock-stage')
+  if (!stage) continue
+  const scale = () => {
+    stage.style.transform = `scale(${viewport.clientWidth / DESIGN_WIDTH})`
+  }
+  scale()
+  new ResizeObserver(scale).observe(viewport)
+}
+
+// Fade-up reveals — skipped entirely for reduced-motion users.
+const fadeUps = document.querySelectorAll('.fade-up')
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  fadeUps.forEach((el) => el.classList.add('in'))
+} else {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in')
+          observer.unobserve(entry.target)
+        }
+      }
+    },
+    { threshold: 0.15 }
+  )
+  fadeUps.forEach((el) => observer.observe(el))
+}
