@@ -89,6 +89,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px max(24px, calc((100% - 1080px) / 2));
+  background: var(--linen); /* the brand's original linen, distinct from the cream page */
 }
 .wordmark {
   font-family: var(--font-display); font-weight: 600; font-size: 23px;
