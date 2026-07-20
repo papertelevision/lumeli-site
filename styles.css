@@ -181,7 +181,7 @@ section { padding: 96px 0; }
 .away-card {
   background: var(--card); border: 1px solid var(--card-line);
   border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-lift);
-  max-width: 340px; transform: rotate(0.8deg);
+  max-width: 340px;
 }
 .away-title { font-family: var(--font-display); font-weight: 600; font-size: 16.5px; margin-bottom: 10px; }
 .away-line { font-size: 14px; color: var(--ink-soft); }
@@ -393,7 +393,7 @@ section { padding: 96px 0; }
 .mock-brief-row .mock-chip { margin-left: auto; }
 
 /* Mockup 2 — mail */
-.mock-mail { position: absolute; top: 8px; left: 0; width: 880px; transform: rotate(0.4deg); }
+.mock-mail { position: absolute; top: 8px; left: 0; width: 880px; }
 .mock-tabbar {
   display: flex; align-items: center; gap: 8px; height: 46px; padding: 0 16px;
   background: var(--linen); border-bottom: 1px solid var(--sage-line);
