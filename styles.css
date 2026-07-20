@@ -84,8 +84,16 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 /* ── Nav ── */
 .nav {
+  position: relative;
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px max(24px, calc((100% - 1280px) / 2));
+}
+/* hand-drawn dash border along the header's full width */
+.nav::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 4px;
+  background: url('images/dash.png') repeat-x left center / auto 100%;
 }
 .nav-logo-link { display: inline-flex; }
 .nav-logo { display: block; height: 33px; width: auto; }
