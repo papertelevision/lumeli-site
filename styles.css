@@ -229,6 +229,10 @@ section { padding: 96px 0; }
   pointer-events: none;
 }
 .get .container { position: relative; }
+.get-art {
+  display: block; width: min(300px, 60%); height: auto;
+  margin: 0 auto 28px;
+}
 .cta-form { margin-top: 36px; }
 .cta-label {
   display: block; font-size: 11.5px; font-weight: 800; text-transform: uppercase;
