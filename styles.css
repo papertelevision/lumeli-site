@@ -45,8 +45,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-.container.narrow { max-width: 720px; text-align: center; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.container.narrow { max-width: 780px; text-align: center; }
 
 .skip-link {
   position: absolute; left: -9999px; top: 0;
@@ -62,8 +62,8 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 /* ── Type ── */
 h1, h2, h3 { font-family: var(--font-display); font-weight: 550; line-height: 1.12; color: #574e40; }
-h1 { font-size: clamp(40px, 6.5vw, 68px); letter-spacing: -0.01em; line-height: 1.0; }
-h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 18px; }
+h1 { font-size: clamp(40px, 6vw, 78px); letter-spacing: -0.01em; line-height: 1.0; }
+h2 { font-size: clamp(28px, 3.6vw, 46px); margin-bottom: 18px; }
 h3 { font-size: 23px; margin-bottom: 10px; }
 
 .body-lg { font-size: 18px; color: var(--ink-soft); max-width: 42em; margin: 0 auto; }
@@ -86,7 +86,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .nav {
   position: relative;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 22px max(24px, calc((100% - 1280px) / 2));
+  padding: 22px max(32px, calc((100% - 1440px) / 2));
 }
 /* hand-drawn dash border along the header's full width */
 .nav::after {
@@ -109,7 +109,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 /* ── Hero ── */
 .hero { position: relative; padding: 110px 0 28px; }
-.hero .container { max-width: 1328px; } /* content edge matches the nav's */
+.hero .container { max-width: 1504px; } /* content edge matches the nav's */
 .hero-split {
   display: grid; grid-template-columns: 0.95fr 1.1fr;
   gap: 48px; align-items: center;
@@ -234,7 +234,7 @@ section { padding: 96px 0; }
 
 /* ── Showcase: intro copy left, Signals mockup right ── */
 .showcase { padding: 24px 0 96px; }
-.showcase .container { max-width: 1328px; }
+.showcase .container { max-width: 1504px; }
 .showcase-split {
   display: grid; grid-template-columns: 0.85fr 1.15fr;
   gap: 48px; align-items: center;
@@ -306,7 +306,7 @@ section { padding: 96px 0; }
    Fixed 880px design stages, scaled as a unit by script.js. All inert. */
 
 .mock-wrap { margin-top: 64px; user-select: none; }
-.mock-viewport { position: relative; width: 100%; max-width: 880px; margin: 0 auto; }
+.mock-viewport { position: relative; width: 100%; max-width: 1040px; margin: 0 auto; }
 .mock-viewport-signals { aspect-ratio: 880 / 560; }
 .mock-viewport-mail { aspect-ratio: 880 / 520; }
 .mock-stage { position: absolute; top: 0; left: 0; width: 880px; transform-origin: top left; }
