@@ -33,12 +33,28 @@
 html { scroll-behavior: smooth; }
 
 body {
+  position: relative;
   background: var(--linen);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* The light rays live behind BOTH the header and the hero (z -1 sits above
+   the body's linen but beneath all content), so the translucent header
+   lets them glow through. */
+body::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: min(920px, 130vh);
+  background:
+    radial-gradient(120% 70% at 50% -20%, rgba(185, 138, 46, 0.28), rgba(246, 236, 215, 0.16) 40%, transparent 70%),
+    repeating-conic-gradient(from -10deg at 50% -25%, rgba(185, 138, 46, 0.09) 0deg 5deg, transparent 5deg 14deg);
+  -webkit-mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
+  mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -85,7 +101,10 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 /* ── Nav ── */
 .nav {
   display: flex; align-items: center; justify-content: space-between;
-  max-width: 1080px; margin: 0 auto; padding: 22px 24px;
+  padding: 22px max(24px, calc((100% - 1080px) / 2));
+  background: rgba(250, 247, 242, 0.45); /* rays shimmer through */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .wordmark {
   font-family: var(--font-display); font-weight: 600; font-size: 23px;
@@ -98,17 +117,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 }
 
 /* ── Hero + light rays ── */
-.hero { position: relative; overflow: hidden; padding: 72px 0 90px; text-align: center; }
-.hero::before {
-  content: '';
-  position: absolute; inset: -40% -20% auto; height: 120%;
-  background:
-    radial-gradient(120% 70% at 50% -20%, rgba(185, 138, 46, 0.16), rgba(246, 236, 215, 0.10) 40%, transparent 70%),
-    repeating-conic-gradient(from -10deg at 50% -25%, rgba(185, 138, 46, 0.05) 0deg 5deg, transparent 5deg 14deg);
-  -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 78%);
-  mask-image: linear-gradient(to bottom, black 20%, transparent 78%);
-  pointer-events: none;
-}
+.hero { position: relative; padding: 72px 0 90px; text-align: center; }
 .hero-copy { position: relative; max-width: 760px; }
 .hero-sub {
   font-size: 19px; color: var(--ink-soft);
