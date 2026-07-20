@@ -295,7 +295,7 @@ section { padding: 96px 0; }
 /* ── Footer: full-bleed artwork band ── */
 .footer {
   width: 100%;
-  aspect-ratio: 1774 / 887; /* shows the artwork edge to edge, uncropped */
+  aspect-ratio: 1774 / 729; /* shows the artwork edge to edge, uncropped */
   background: url('images/footer_bg.jpg') no-repeat center bottom / cover;
 }
 
