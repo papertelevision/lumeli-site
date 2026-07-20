@@ -42,48 +42,64 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* The light rays live behind BOTH the header and the hero (z -1 sits above
-   the body's linen but beneath all content), so the translucent header
-   lets them glow through. */
-body::before {
-  content: '';
+/* ── Living light rays ──────────────────────────────────────────────
+   A fixed container behind everything (header included) holds a breathing
+   glow plus two counter-rotating soft beam fields. Their slow drift and
+   overlap make the light feel like it's gently swirling and shifting.
+   The mask lives on the (non-rotating) container so the fade stays put. */
+.rays {
   position: absolute; top: 0; left: 0; right: 0; height: min(920px, 130vh);
-  background:
-    radial-gradient(120% 70% at 50% -20%, rgba(185, 138, 46, 0.25), rgba(246, 236, 215, 0.14) 40%, transparent 70%),
-    repeating-conic-gradient(from -10deg at 50% -25%, rgba(185, 138, 46, 0.08) 0deg 5deg, transparent 5deg 14deg);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
   -webkit-mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
   mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
-  pointer-events: none;
-  z-index: -1;
 }
-
-/* A slow ring of light drifting outward from the rays' origin — the sense
-   of light coursing through them. Transform/opacity only (compositor-cheap). */
-body::after {
+.rays::before {
+  /* the warm halo, breathing very slowly */
   content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(120% 70% at 50% -20%, rgba(185, 138, 46, 0.25), rgba(246, 236, 215, 0.14) 40%, transparent 70%);
+  animation: glow-breathe 9s ease-in-out infinite alternate;
+}
+.rays-spin {
   position: absolute; top: -230px; left: 50%;
-  width: 1700px; height: 1700px;
-  margin: -850px 0 0 -850px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    transparent 30%,
-    rgba(185, 138, 46, 0.07) 44%,
-    rgba(246, 236, 215, 0.05) 52%,
-    transparent 62%
+  width: 3000px; height: 3000px;
+  margin: -1500px 0 0 -1500px;
+  will-change: transform;
+}
+/* soft-edged beams (stops fade in and out — no hard spoke edges) */
+.rays-spin-a {
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(185, 138, 46, 0.085) 5.5deg,
+    transparent 11deg,
+    transparent 14deg
   );
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0;
-  animation: ray-pulse 11s ease-out infinite;
+  animation: rays-turn 150s linear infinite;
+}
+.rays-spin-b {
+  background: repeating-conic-gradient(
+    from 7deg,
+    transparent 0deg,
+    rgba(246, 236, 215, 0.30) 6deg,
+    transparent 12deg,
+    transparent 17deg
+  );
+  opacity: 0.5;
+  animation: rays-turn 210s linear infinite reverse;
+}
+@keyframes rays-turn {
+  to { transform: rotate(360deg); }
+}
+@keyframes glow-breathe {
+  from { opacity: 0.82; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.045); }
 }
 
-@keyframes ray-pulse {
-  0% { transform: scale(0.12); opacity: 0; }
-  18% { opacity: 1; }
-  70% { opacity: 0.45; }
-  100% { transform: scale(1); opacity: 0; }
-}
+/* content layers ride above the rays */
+.nav, main, .footer { position: relative; z-index: 1; }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 720px; text-align: center; }
@@ -452,7 +468,7 @@ section { padding: 96px 0; }
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
-  body::after { animation: none; opacity: 0; }
+  .rays::before, .rays-spin { animation: none; }
 }
 
 /* ── Responsive ── */
