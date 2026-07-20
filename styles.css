@@ -57,6 +57,34 @@ body::before {
   z-index: -1;
 }
 
+/* A slow ring of light drifting outward from the rays' origin — the sense
+   of light coursing through them. Transform/opacity only (compositor-cheap). */
+body::after {
+  content: '';
+  position: absolute; top: -230px; left: 50%;
+  width: 1700px; height: 1700px;
+  margin: -850px 0 0 -850px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    rgba(185, 138, 46, 0.07) 44%,
+    rgba(246, 236, 215, 0.05) 52%,
+    transparent 62%
+  );
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  animation: ray-pulse 11s ease-out infinite;
+}
+
+@keyframes ray-pulse {
+  0% { transform: scale(0.12); opacity: 0; }
+  18% { opacity: 1; }
+  70% { opacity: 0.45; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 720px; text-align: center; }
 
@@ -424,6 +452,7 @@ section { padding: 96px 0; }
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
+  body::after { animation: none; opacity: 0; }
 }
 
 /* ── Responsive ── */
