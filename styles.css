@@ -44,56 +44,49 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Living light rays — cast from the top-left corner ─────────────
-   Crisp counter-rotating beam fields + a breathing glow, all behind the
-   content. The mask (on the non-rotating container) fades them out well
-   before mid-page. */
-.rays {
-  position: absolute; top: 0; left: 0; right: 0; height: min(920px, 130vh);
+/* ── Drifting light pools ───────────────────────────────────────────
+   Enormous, feather-soft orbs of warm light drifting behind the content —
+   sunlight moving through water. Transform-only animation; each pool
+   breathes on its own long cycle so the pattern never visibly repeats. */
+.pools {
+  position: absolute; top: 0; left: 0; right: 0; height: min(1100px, 150vh);
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  -webkit-mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
-  mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 96%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 96%);
 }
-.rays::before {
-  /* warm halo hugging the top-left, breathing slowly */
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(95% 85% at -4% -12%, rgba(185, 138, 46, 0.25), rgba(246, 236, 215, 0.14) 40%, transparent 70%);
-  animation: glow-breathe 14s ease-in-out infinite alternate;
-}
-.rays-spin {
-  position: absolute; top: -180px; left: -120px;
-  width: 5000px; height: 5000px;
-  margin: -2500px 0 0 -2500px;
+.pool {
+  position: absolute;
+  border-radius: 50%;
   will-change: transform;
-  filter: blur(7px); /* soft light, not hard spokes */
 }
-/* beams LIGHTEN the cream — sunlight, not shadow */
-.rays-spin-a {
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(255, 250, 238, 0.6) 0deg 5deg,
-    transparent 5deg 14deg
-  );
-  animation: rays-turn 240s linear infinite;
+.pool-gold {
+  width: 900px; height: 900px; top: -320px; left: -180px;
+  background: radial-gradient(circle, rgba(185, 138, 46, 0.16), rgba(185, 138, 46, 0.05) 45%, transparent 68%);
+  animation: pool-drift-a 75s ease-in-out infinite alternate;
 }
-.rays-spin-b {
-  background: repeating-conic-gradient(
-    from 7deg,
-    rgba(255, 255, 248, 0.5) 0deg 6deg,
-    transparent 6deg 17deg
-  );
-  opacity: 0.55;
-  animation: rays-turn 340s linear infinite reverse;
+.pool-sea {
+  width: 820px; height: 820px; top: 160px; right: -260px;
+  background: radial-gradient(circle, rgba(110, 139, 123, 0.13), rgba(110, 139, 123, 0.04) 45%, transparent 68%);
+  animation: pool-drift-b 95s ease-in-out infinite alternate;
 }
-@keyframes rays-turn {
-  to { transform: rotate(360deg); }
+.pool-cream {
+  width: 700px; height: 700px; top: 420px; left: 22%;
+  background: radial-gradient(circle, rgba(255, 251, 240, 0.55), rgba(255, 251, 240, 0.18) 45%, transparent 68%);
+  animation: pool-drift-c 60s ease-in-out infinite alternate;
 }
-@keyframes glow-breathe {
-  from { opacity: 0.82; transform: scale(1); }
-  to { opacity: 1; transform: scale(1.045); }
+@keyframes pool-drift-a {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(160px, 90px) scale(1.12); }
+}
+@keyframes pool-drift-b {
+  from { transform: translate(0, 0) scale(1.08); }
+  to { transform: translate(-140px, -70px) scale(0.96); }
+}
+@keyframes pool-drift-c {
+  from { transform: translate(0, 0) scale(0.95); }
+  to { transform: translate(90px, -60px) scale(1.1); }
 }
 .nav, main, .footer { position: relative; z-index: 1; }
 
@@ -478,7 +471,7 @@ section { padding: 96px 0; }
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
-  .rays::before, .rays-spin { animation: none; }
+  .pool { animation: none; }
 }
 
 /* ── Responsive ── */
