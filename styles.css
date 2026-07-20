@@ -292,15 +292,12 @@ section { padding: 96px 0; }
 }
 .cta-row input::placeholder { color: var(--ink-faint); }
 
-/* ── Footer ── */
-.footer { background: #dbdeca; border-top: 1px solid var(--sage-line); padding: 42px 0; }
-.footer-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
-.footer-logo { display: block; height: 25px; width: auto; }
-.footer-tag { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
-.footer-links { display: flex; gap: 26px; font-size: 13.5px; color: var(--ink-soft); }
-.footer-links a { color: var(--ink-soft); text-decoration: none; }
-.footer-links a:hover { color: var(--ink); }
-.footer-links span { color: var(--ink-faint); }
+/* ── Footer: full-bleed artwork band ── */
+.footer {
+  width: 100%;
+  aspect-ratio: 1774 / 887; /* shows the artwork edge to edge, uncropped */
+  background: url('images/footer_bg.jpg') no-repeat center bottom / cover;
+}
 
 /* ══ Mockups ═════════════════════════════════════════════════════════
    Fixed 880px design stages, scaled as a unit by script.js. All inert. */
