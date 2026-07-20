@@ -30,3 +30,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   )
   fadeUps.forEach((el) => observer.observe(el))
 }
+
+// Copyright year stays current without an annual edit.
+const yearEl = document.getElementById('copyright-year')
+if (yearEl) yearEl.textContent = String(new Date().getFullYear())
