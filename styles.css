@@ -139,7 +139,18 @@ section { padding: 96px 0; }
 .wash-deep { background: linear-gradient(180deg, var(--cream), var(--cream-soft) 30%, var(--cream-soft) 70%, var(--cream)); }
 .wash-sage { background: linear-gradient(180deg, var(--cream), var(--sage-panel) 16%, var(--sage-panel) 84%, var(--cream)); }
 
-.why { padding-top: 48px; } /* halves the hero → bird gap */
+.why { position: relative; padding-top: 48px; } /* halves the hero → bird gap */
+.accent-clay { color: var(--clay); }
+/* the glow hugs the text column instead of washing the full viewport */
+.why::before {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: min(860px, 94vw);
+  background: radial-gradient(ellipse 85% 70% at 50% 45%, var(--cream-soft) 30%, transparent 75%);
+  pointer-events: none;
+}
+.why .container { position: relative; }
 
 /* ── How-it-works beats ── */
 .how-intro { margin-bottom: 72px; }
