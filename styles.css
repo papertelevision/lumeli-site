@@ -42,61 +42,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Living light rays ──────────────────────────────────────────────
-   A fixed container behind everything (header included) holds a breathing
-   glow plus two counter-rotating soft beam fields. Their slow drift and
-   overlap make the light feel like it's gently swirling and shifting.
-   The mask lives on the (non-rotating) container so the fade stays put. */
-.rays {
-  position: absolute; top: 0; left: 0; right: 0; height: min(920px, 130vh);
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-  -webkit-mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
-  mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
-}
-.rays::before {
-  /* the warm halo, breathing very slowly */
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(120% 70% at 50% -20%, rgba(185, 138, 46, 0.25), rgba(246, 236, 215, 0.14) 40%, transparent 70%);
-  animation: glow-breathe 9s ease-in-out infinite alternate;
-}
-.rays-spin {
-  position: absolute; top: -230px; left: 50%;
-  width: 3000px; height: 3000px;
-  margin: -1500px 0 0 -1500px;
-  will-change: transform;
-}
-/* crisp-edged beams — defined spokes, not a soft wash */
-.rays-spin-a {
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(185, 138, 46, 0.085) 0deg 5deg,
-    transparent 5deg 14deg
-  );
-  animation: rays-turn 150s linear infinite;
-}
-.rays-spin-b {
-  background: repeating-conic-gradient(
-    from 7deg,
-    rgba(246, 236, 215, 0.32) 0deg 6deg,
-    transparent 6deg 17deg
-  );
-  opacity: 0.5;
-  animation: rays-turn 210s linear infinite reverse;
-}
-@keyframes rays-turn {
-  to { transform: rotate(360deg); }
-}
-@keyframes glow-breathe {
-  from { opacity: 0.82; transform: scale(1); }
-  to { opacity: 1; transform: scale(1.045); }
-}
-
-/* content layers ride above the rays */
-.nav, main, .footer { position: relative; z-index: 1; }
-
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 720px; text-align: center; }
 
@@ -142,9 +87,6 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px max(24px, calc((100% - 1080px) / 2));
-  background: rgba(250, 247, 242, 0.45); /* rays shimmer through */
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
 }
 .wordmark {
   font-family: var(--font-display); font-weight: 600; font-size: 23px;
@@ -156,14 +98,31 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   width: 0.19em; height: 0.19em; border-radius: 50%; background: var(--clay);
 }
 
-/* ── Hero + light rays ── */
-.hero { position: relative; padding: 72px 0 90px; text-align: center; }
-.hero-copy { position: relative; max-width: 760px; }
+/* ── Hero ── */
+.hero { position: relative; padding: 56px 0 90px; }
+.hero-split {
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px; align-items: center;
+}
+.hero-copy { text-align: left; }
 .hero-sub {
   font-size: 19px; color: var(--ink-soft);
-  max-width: 34em; margin: 22px auto 0; line-height: 1.65;
+  max-width: 30em; margin: 22px 0 0; line-height: 1.65;
 }
-.hero-cta { margin-top: 34px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.hero-cta {
+  margin-top: 34px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+.hero-art img {
+  display: block; width: 100%; height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+}
+
+@media (max-width: 820px) {
+  .hero-split { grid-template-columns: 1fr; gap: 36px; }
+  .hero-art { max-width: 520px; }
+}
 
 /* ── Section rhythm & washes ── */
 section { padding: 96px 0; }
@@ -464,7 +423,6 @@ section { padding: 96px 0; }
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
-  .rays::before, .rays-spin { animation: none; }
 }
 
 /* ── Responsive ── */
