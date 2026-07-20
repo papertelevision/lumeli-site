@@ -292,11 +292,22 @@ section { padding: 96px 0; }
 }
 .cta-row input::placeholder { color: var(--ink-faint); }
 
-/* ── Footer: full-bleed artwork band ── */
+/* ── Footer: full-bleed artwork band with the brand centered in its sky ── */
 .footer {
+  position: relative;
   width: 100%;
   aspect-ratio: 1774 / 707; /* shows the artwork edge to edge, uncropped */
   background: url('images/footer_bg.jpg') no-repeat center bottom / cover;
+}
+.footer-brand {
+  position: absolute; top: 7%; left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.footer-logo { display: block; width: min(250px, 30vw); height: auto; margin: 0 auto; }
+.footer-tag {
+  font-size: 15px; font-weight: 600; color: #574e40;
+  margin-top: 2px;
 }
 
 /* ══ Mockups ═════════════════════════════════════════════════════════
