@@ -68,24 +68,20 @@ body {
   margin: -1500px 0 0 -1500px;
   will-change: transform;
 }
-/* soft-edged beams (stops fade in and out — no hard spoke edges) */
+/* crisp-edged beams — defined spokes, not a soft wash */
 .rays-spin-a {
   background: repeating-conic-gradient(
     from 0deg,
-    transparent 0deg,
-    rgba(185, 138, 46, 0.085) 5.5deg,
-    transparent 11deg,
-    transparent 14deg
+    rgba(185, 138, 46, 0.085) 0deg 5deg,
+    transparent 5deg 14deg
   );
   animation: rays-turn 150s linear infinite;
 }
 .rays-spin-b {
   background: repeating-conic-gradient(
     from 7deg,
-    transparent 0deg,
-    rgba(246, 236, 215, 0.30) 6deg,
-    transparent 12deg,
-    transparent 17deg
+    rgba(246, 236, 215, 0.32) 0deg 6deg,
+    transparent 6deg 17deg
   );
   opacity: 0.5;
   animation: rays-turn 210s linear infinite reverse;
