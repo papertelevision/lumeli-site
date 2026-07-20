@@ -3,6 +3,7 @@
 
 :root {
   --cream: #f7edd8;       /* site background — matches the hero artwork */
+  --cream-soft: #f9f3e4;  /* header + lifted section washes */
   --cream-deep: #f1e2c2;
   --linen: #faf7f2;
   --linen-deep: #f3eee5;
@@ -89,7 +90,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 22px max(24px, calc((100% - 1080px) / 2));
-  background: var(--linen); /* the brand's original linen, distinct from the cream page */
+  background: var(--cream-soft); /* a breath lighter than the cream page */
 }
 .wordmark {
   font-family: var(--font-display); font-weight: 600; font-size: 23px;
@@ -130,7 +131,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 /* ── Section rhythm & washes ── */
 section { padding: 96px 0; }
-.wash-deep { background: linear-gradient(180deg, var(--cream), var(--cream-deep) 30%, var(--cream-deep) 70%, var(--cream)); }
+.wash-deep { background: linear-gradient(180deg, var(--cream), var(--cream-soft) 30%, var(--cream-soft) 70%, var(--cream)); }
 .wash-sage { background: linear-gradient(180deg, var(--cream), var(--sage-panel) 16%, var(--sage-panel) 84%, var(--cream)); }
 
 /* ── How-it-works beats ── */
