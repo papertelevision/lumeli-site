@@ -61,30 +61,32 @@ body {
   content: '';
   position: absolute; inset: 0;
   background: radial-gradient(95% 85% at -4% -12%, rgba(185, 138, 46, 0.25), rgba(246, 236, 215, 0.14) 40%, transparent 70%);
-  animation: glow-breathe 9s ease-in-out infinite alternate;
+  animation: glow-breathe 14s ease-in-out infinite alternate;
 }
 .rays-spin {
   position: absolute; top: -180px; left: -120px;
   width: 5000px; height: 5000px;
   margin: -2500px 0 0 -2500px;
   will-change: transform;
+  filter: blur(7px); /* soft light, not hard spokes */
 }
+/* beams LIGHTEN the cream — sunlight, not shadow */
 .rays-spin-a {
   background: repeating-conic-gradient(
     from 0deg,
-    rgba(185, 138, 46, 0.085) 0deg 5deg,
+    rgba(255, 250, 238, 0.6) 0deg 5deg,
     transparent 5deg 14deg
   );
-  animation: rays-turn 150s linear infinite;
+  animation: rays-turn 240s linear infinite;
 }
 .rays-spin-b {
   background: repeating-conic-gradient(
     from 7deg,
-    rgba(246, 236, 215, 0.32) 0deg 6deg,
+    rgba(255, 255, 248, 0.5) 0deg 6deg,
     transparent 6deg 17deg
   );
-  opacity: 0.5;
-  animation: rays-turn 210s linear infinite reverse;
+  opacity: 0.55;
+  animation: rays-turn 340s linear infinite reverse;
 }
 @keyframes rays-turn {
   to { transform: rotate(360deg); }
