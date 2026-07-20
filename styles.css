@@ -136,7 +136,6 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 /* ── Section rhythm & washes ── */
 section { padding: 96px 0; }
-.wash-deep { background: linear-gradient(180deg, var(--cream), var(--cream-soft) 30%, var(--cream-soft) 70%, var(--cream)); }
 
 .why { position: relative; padding-top: 48px; } /* halves the hero → bird gap */
 .accent-clay { color: var(--clay); }
