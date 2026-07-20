@@ -146,10 +146,10 @@ section { padding: 96px 0; }
    and never clips against them */
 .why::before {
   content: '';
-  position: absolute; top: -120px; bottom: -120px; left: 50%;
+  position: absolute; top: -120px; bottom: -270px; left: 50%;
   transform: translateX(-50%);
   width: min(1600px, 160vw);
-  background: radial-gradient(ellipse 42% 46% at 50% 52%, var(--cream-soft) 35%, rgba(249, 243, 228, 0) 100%);
+  background: radial-gradient(ellipse 42% 46% at 50% 46%, var(--cream-soft) 35%, rgba(249, 243, 228, 0) 100%);
   pointer-events: none;
 }
 .why .container { position: relative; }
