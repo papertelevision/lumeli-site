@@ -44,50 +44,54 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Drifting light pools ───────────────────────────────────────────
-   Enormous, feather-soft orbs of warm light drifting behind the content —
-   sunlight moving through water. Transform-only animation; each pool
-   breathes on its own long cycle so the pattern never visibly repeats. */
-.pools {
-  position: absolute; top: 0; left: 0; right: 0; height: min(1100px, 150vh);
+/* ── Dust motes in sunlight ─────────────────────────────────────────
+   A handful of tiny specks drifting slowly upward with a gentle sway,
+   fading in and out — golden-hour dust. Each mote has its own size,
+   tint, pace, and (negative) delay, so the field is always mid-motion
+   and never repeats visibly. Transform/opacity only. */
+.motes {
+  position: absolute; top: 0; left: 0; right: 0; height: min(980px, 140vh);
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
-  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 96%);
-  mask-image: linear-gradient(to bottom, black 55%, transparent 96%);
 }
-.pool {
+.mote {
+  --tint: rgba(185, 138, 46, 0.5);
+  --peak: 0.55;
   position: absolute;
+  width: 5px; height: 5px;
   border-radius: 50%;
-  will-change: transform;
+  background: var(--tint);
+  box-shadow: 0 0 7px 2px var(--tint);
+  opacity: 0;
+  animation: mote-rise 40s linear infinite;
+  will-change: transform, opacity;
 }
-.pool-gold {
-  width: 900px; height: 900px; top: -320px; left: -180px;
-  background: radial-gradient(circle, rgba(185, 138, 46, 0.16), rgba(185, 138, 46, 0.05) 45%, transparent 68%);
-  animation: pool-drift-a 75s ease-in-out infinite alternate;
+@keyframes mote-rise {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  12%  { opacity: var(--peak); }
+  45%  { transform: translate(16px, -300px); }
+  80%  { opacity: var(--peak); }
+  100% { transform: translate(-10px, -660px); opacity: 0; }
 }
-.pool-sea {
-  width: 820px; height: 820px; top: 160px; right: -260px;
-  background: radial-gradient(circle, rgba(110, 139, 123, 0.13), rgba(110, 139, 123, 0.04) 45%, transparent 68%);
-  animation: pool-drift-b 95s ease-in-out infinite alternate;
-}
-.pool-cream {
-  width: 700px; height: 700px; top: 420px; left: 22%;
-  background: radial-gradient(circle, rgba(255, 251, 240, 0.55), rgba(255, 251, 240, 0.18) 45%, transparent 68%);
-  animation: pool-drift-c 60s ease-in-out infinite alternate;
-}
-@keyframes pool-drift-a {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(160px, 90px) scale(1.12); }
-}
-@keyframes pool-drift-b {
-  from { transform: translate(0, 0) scale(1.08); }
-  to { transform: translate(-140px, -70px) scale(0.96); }
-}
-@keyframes pool-drift-c {
-  from { transform: translate(0, 0) scale(0.95); }
-  to { transform: translate(90px, -60px) scale(1.1); }
-}
+/* each speck: where it lives, its color, pace, and phase */
+.mote:nth-child(1)  { left: 8%;  top: 78%; animation-duration: 38s; animation-delay: -4s; }
+.mote:nth-child(2)  { left: 16%; top: 92%; width: 3px; height: 3px; animation-duration: 47s; animation-delay: -21s;
+                      --tint: rgba(110, 139, 123, 0.45); }
+.mote:nth-child(3)  { left: 27%; top: 84%; width: 4px; height: 4px; animation-duration: 33s; animation-delay: -12s;
+                      --tint: rgba(255, 250, 238, 0.85); --peak: 0.8; }
+.mote:nth-child(4)  { left: 38%; top: 96%; animation-duration: 52s; animation-delay: -30s; }
+.mote:nth-child(5)  { left: 49%; top: 88%; width: 3px; height: 3px; animation-duration: 41s; animation-delay: -8s;
+                      --tint: rgba(110, 139, 123, 0.5); }
+.mote:nth-child(6)  { left: 58%; top: 94%; width: 6px; height: 6px; animation-duration: 36s; animation-delay: -25s;
+                      --tint: rgba(185, 138, 46, 0.4); --peak: 0.45; }
+.mote:nth-child(7)  { left: 68%; top: 82%; width: 4px; height: 4px; animation-duration: 45s; animation-delay: -17s;
+                      --tint: rgba(255, 250, 238, 0.8); --peak: 0.75; }
+.mote:nth-child(8)  { left: 78%; top: 90%; animation-duration: 49s; animation-delay: -37s; }
+.mote:nth-child(9)  { left: 87%; top: 86%; width: 3px; height: 3px; animation-duration: 34s; animation-delay: -2s;
+                      --tint: rgba(110, 139, 123, 0.42); }
+.mote:nth-child(10) { left: 94%; top: 95%; width: 4px; height: 4px; animation-duration: 55s; animation-delay: -44s;
+                      --tint: rgba(185, 138, 46, 0.45); }
 .nav, main, .footer { position: relative; z-index: 1; }
 
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -471,7 +475,7 @@ section { padding: 96px 0; }
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
-  .pool { animation: none; }
+  .mote { animation: none; opacity: 0; }
 }
 
 /* ── Responsive ── */
