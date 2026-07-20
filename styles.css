@@ -92,7 +92,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   padding: 22px max(24px, calc((100% - 1080px) / 2));
 }
 .nav-logo-link { display: inline-flex; }
-.nav-logo { display: block; height: 44px; width: auto; }
+.nav-logo { display: block; height: 33px; width: auto; }
 .wordmark {
   font-family: var(--font-display); font-weight: 600; font-size: 23px;
   letter-spacing: 0.02em; color: var(--ink); user-select: none;
