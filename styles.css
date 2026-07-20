@@ -108,7 +108,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 }
 
 /* ── Hero ── */
-.hero { position: relative; padding: 110px 0 110px; }
+.hero { position: relative; padding: 110px 0 55px; }
 .hero .container { max-width: 1328px; } /* content edge matches the nav's */
 .hero-split {
   display: grid; grid-template-columns: 0.95fr 1.1fr;
@@ -214,7 +214,7 @@ section { padding: 96px 0; }
 .calm-close { color: var(--ink-soft); max-width: 40em; margin: 0 auto; }
 
 .why-bird {
-  display: block; width: 150px; height: auto;
+  display: block; width: 170px; height: auto;
   margin: 0 auto 36px;
 }
 
