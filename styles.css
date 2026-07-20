@@ -234,9 +234,11 @@ section { padding: 96px 0; }
   margin: 0 auto 28px;
 }
 .cta-form { margin-top: 36px; }
-.cta-label {
-  display: block; font-size: 11.5px; font-weight: 800; text-transform: uppercase;
-  letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 10px;
+/* visually hidden but still announced to screen readers */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); overflow: hidden; white-space: nowrap;
 }
 .cta-row { display: flex; justify-content: center; gap: 10px; max-width: 480px; margin: 0 auto 14px; }
 .cta-row input {
