@@ -246,7 +246,7 @@ section { padding: 96px 0; }
 /* ── Footer ── */
 .footer { background: var(--sage-panel); border-top: 1px solid var(--sage-line); padding: 42px 0; }
 .footer-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
-.wordmark-footer { font-size: 20px; }
+.footer-logo { display: block; height: 25px; width: auto; }
 .footer-tag { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
 .footer-links { display: flex; gap: 26px; font-size: 13.5px; color: var(--ink-soft); }
 .footer-links a { color: var(--ink-soft); text-decoration: none; }
