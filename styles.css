@@ -44,6 +44,57 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Living light rays — cast from the top-left corner ─────────────
+   Crisp counter-rotating beam fields + a breathing glow, all behind the
+   content. The mask (on the non-rotating container) fades them out well
+   before mid-page. */
+.rays {
+  position: absolute; top: 0; left: 0; right: 0; height: min(920px, 130vh);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
+  mask-image: linear-gradient(to bottom, black 25%, transparent 80%);
+}
+.rays::before {
+  /* warm halo hugging the top-left, breathing slowly */
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(95% 85% at -4% -12%, rgba(185, 138, 46, 0.25), rgba(246, 236, 215, 0.14) 40%, transparent 70%);
+  animation: glow-breathe 9s ease-in-out infinite alternate;
+}
+.rays-spin {
+  position: absolute; top: -180px; left: -120px;
+  width: 5000px; height: 5000px;
+  margin: -2500px 0 0 -2500px;
+  will-change: transform;
+}
+.rays-spin-a {
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(185, 138, 46, 0.085) 0deg 5deg,
+    transparent 5deg 14deg
+  );
+  animation: rays-turn 150s linear infinite;
+}
+.rays-spin-b {
+  background: repeating-conic-gradient(
+    from 7deg,
+    rgba(246, 236, 215, 0.32) 0deg 6deg,
+    transparent 6deg 17deg
+  );
+  opacity: 0.5;
+  animation: rays-turn 210s linear infinite reverse;
+}
+@keyframes rays-turn {
+  to { transform: rotate(360deg); }
+}
+@keyframes glow-breathe {
+  from { opacity: 0.82; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.045); }
+}
+.nav, main, .footer { position: relative; z-index: 1; }
+
 .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 720px; text-align: center; }
 
@@ -425,6 +476,7 @@ section { padding: 96px 0; }
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
+  .rays::before, .rays-spin { animation: none; }
 }
 
 /* ── Responsive ── */
