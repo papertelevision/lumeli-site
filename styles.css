@@ -108,7 +108,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 }
 
 /* ── Hero ── */
-.hero { position: relative; padding: 110px 0 55px; }
+.hero { position: relative; padding: 110px 0 28px; }
 .hero .container { max-width: 1328px; } /* content edge matches the nav's */
 .hero-split {
   display: grid; grid-template-columns: 0.95fr 1.1fr;
@@ -138,6 +138,8 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 section { padding: 96px 0; }
 .wash-deep { background: linear-gradient(180deg, var(--cream), var(--cream-soft) 30%, var(--cream-soft) 70%, var(--cream)); }
 .wash-sage { background: linear-gradient(180deg, var(--cream), var(--sage-panel) 16%, var(--sage-panel) 84%, var(--cream)); }
+
+.why { padding-top: 48px; } /* halves the hero → bird gap */
 
 /* ── How-it-works beats ── */
 .how-intro { margin-bottom: 72px; }
