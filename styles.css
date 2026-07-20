@@ -85,7 +85,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 /* ── Nav ── */
 .nav {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 22px max(24px, calc((100% - 1080px) / 2));
+  padding: 22px max(24px, calc((100% - 1280px) / 2));
 }
 .nav-logo-link { display: inline-flex; }
 .nav-logo { display: block; height: 33px; width: auto; }
@@ -100,8 +100,8 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 }
 
 /* ── Hero ── */
-.hero { position: relative; padding: 56px 0 90px; }
-.hero .container { max-width: 1128px; } /* content edge matches the nav's */
+.hero { position: relative; padding: 56px 0 150px; }
+.hero .container { max-width: 1328px; } /* content edge matches the nav's */
 .hero-split {
   display: grid; grid-template-columns: 0.95fr 1.1fr;
   gap: 48px; align-items: center;
