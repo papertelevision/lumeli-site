@@ -141,13 +141,15 @@ section { padding: 96px 0; }
 
 .why { position: relative; padding-top: 48px; } /* halves the hero → bird gap */
 .accent-clay { color: var(--clay); }
-/* the glow hugs the text column instead of washing the full viewport */
+/* the glow hugs the text column — the box is far larger than the visible
+   pool so the gradient reaches full transparency well inside its edges
+   and never clips against them */
 .why::before {
   content: '';
-  position: absolute; top: 0; bottom: 0; left: 50%;
+  position: absolute; top: -120px; bottom: -120px; left: 50%;
   transform: translateX(-50%);
-  width: min(860px, 94vw);
-  background: radial-gradient(ellipse 85% 70% at 50% 45%, var(--cream-soft) 30%, transparent 75%);
+  width: min(1600px, 160vw);
+  background: radial-gradient(ellipse 42% 46% at 50% 52%, var(--cream-soft) 35%, rgba(249, 243, 228, 0) 100%);
   pointer-events: none;
 }
 .why .container { position: relative; }
