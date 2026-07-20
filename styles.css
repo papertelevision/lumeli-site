@@ -272,10 +272,6 @@ section { padding: 96px 0; }
   pointer-events: none;
 }
 .get .container { position: relative; }
-.get-art {
-  display: block; width: min(300px, 60%); height: auto;
-  margin: 0 auto 28px;
-}
 .cta-form { margin-top: 36px; }
 /* visually hidden but still announced to screen readers */
 .sr-only {
