@@ -137,22 +137,9 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 /* ── Section rhythm & washes ── */
 section { padding: 96px 0; }
 .wash-deep { background: linear-gradient(180deg, var(--cream), var(--cream-soft) 30%, var(--cream-soft) 70%, var(--cream)); }
-.wash-sage { background: linear-gradient(180deg, var(--cream), var(--sage-panel) 16%, var(--sage-panel) 84%, var(--cream)); }
 
 .why { position: relative; padding-top: 48px; } /* halves the hero → bird gap */
 .accent-clay { color: var(--clay); }
-/* the glow hugs the text column — the box is far larger than the visible
-   pool so the gradient reaches full transparency well inside its edges
-   and never clips against them */
-.why::before {
-  content: '';
-  position: absolute; top: -120px; bottom: -270px; left: 50%;
-  transform: translateX(-50%);
-  width: min(1600px, 160vw);
-  background: radial-gradient(ellipse 42% 46% at 50% 46%, var(--cream-soft) 35%, rgba(249, 243, 228, 0) 100%);
-  pointer-events: none;
-}
-.why .container { position: relative; }
 
 /* ── How-it-works beats ── */
 .beat {
