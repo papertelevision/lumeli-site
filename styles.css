@@ -142,6 +142,8 @@ section { padding: 96px 0; }
 
 .why { position: relative; padding-top: 48px; } /* halves the hero → bird gap */
 .accent-clay { color: var(--clay); }
+/* headline phrases break between spans, never inside them */
+.nowrap { white-space: nowrap; }
 
 /* ── How-it-works beats ── */
 .beat {
