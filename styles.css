@@ -45,7 +45,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.container { max-width: 1376px; margin: 0 auto; padding: 0 100px; }
+@media (max-width: 640px) {
+  .container { padding: 0 28px; } /* phones get sane gutters */
+}
 .container.narrow { max-width: 780px; text-align: center; }
 
 .skip-link {
@@ -86,7 +89,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .nav {
   position: relative;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 22px max(32px, calc((100% - 1440px) / 2));
+  padding: 22px max(100px, calc((100% - 1440px) / 2));
 }
 /* hand-drawn dash border along the header's full width */
 .nav::after {
@@ -109,7 +112,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 /* ── Hero ── */
 .hero { position: relative; padding: 110px 0 28px; }
-.hero .container { max-width: 1504px; } /* content edge matches the nav's */
+.hero .container { max-width: 1640px; } /* content edge matches the nav's */
 .hero-split {
   display: grid; grid-template-columns: 0.95fr 1.1fr;
   gap: 48px; align-items: center;
@@ -230,7 +233,7 @@ section { padding: 96px 0; }
 
 /* ── Showcase: intro copy left, Signals mockup right ── */
 .showcase { padding: 24px 0 96px; }
-.showcase .container { max-width: 1504px; }
+.showcase .container { max-width: 1640px; }
 .showcase-split {
   display: grid; grid-template-columns: 0.85fr 1.15fr;
   gap: 48px; align-items: center;
