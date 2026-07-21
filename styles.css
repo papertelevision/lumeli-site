@@ -147,6 +147,8 @@ section { padding: 96px 0; }
 /* the Why column is wide enough for its one-line headline; the paragraph
    keeps its own comfortable measure via .body-lg's max-width */
 .why .container.narrow { max-width: 1040px; }
+/* the philosophy lede needs the room for its one-sentence-per-line break */
+.calm .container.narrow { max-width: 1140px; }
 
 /* ── How-it-works beats ── */
 .beat {
