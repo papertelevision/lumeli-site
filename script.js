@@ -13,7 +13,7 @@ for (const viewport of document.querySelectorAll('.mock-viewport')) {
 }
 
 // Fade-up reveals — skipped entirely for reduced-motion users.
-const fadeUps = document.querySelectorAll('.fade-up')
+const fadeUps = document.querySelectorAll('.fade-up, .pop-in')
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   fadeUps.forEach((el) => el.classList.add('in'))
 } else {
