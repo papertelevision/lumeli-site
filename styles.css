@@ -269,6 +269,8 @@ section { padding: 96px 0; }
   transform: translateX(min(115px, 8vw));
 }
 .ba-art { display: block; width: 100%; height: auto; }
+/* the scenes drift in more slowly than the page's standard reveals */
+.ba-art.fade-up { transition-duration: 1.5s; }
 .ba-label {
   position: absolute; top: 0; left: max(-230px, -16vw);
   width: clamp(150px, 16vw, 250px); height: auto;
