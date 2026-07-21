@@ -144,6 +144,8 @@ section { padding: 96px 0; }
 .accent-clay { color: var(--clay); }
 /* headline phrases break between spans, never inside them */
 .nowrap { white-space: nowrap; }
+/* wider than its narrow column — size to content and center over it */
+#why-title { width: max-content; max-width: none; margin-left: auto; margin-right: auto; }
 
 /* ── How-it-works beats ── */
 .beat {
