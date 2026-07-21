@@ -45,7 +45,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 1376px; margin: 0 auto; padding: 0 100px; }
+.container { max-width: 1336px; margin: 0 auto; padding: 0 80px; }
 @media (max-width: 640px) {
   .container { padding: 0 28px; } /* phones get sane gutters */
 }
@@ -89,7 +89,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .nav {
   position: relative;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 22px max(100px, calc((100% - 1440px) / 2));
+  padding: 22px max(80px, calc((100% - 1440px) / 2));
 }
 /* hand-drawn dash border along the header's full width */
 .nav::after {
