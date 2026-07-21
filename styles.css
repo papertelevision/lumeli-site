@@ -160,6 +160,21 @@ section { padding: 96px 0; }
 .beat-flip .beat-art { order: 1; }
 .beat-copy p { color: var(--ink-soft); margin-bottom: 14px; }
 .beat-copy p:last-child { margin-bottom: 0; }
+.beat-list {
+  list-style: none; padding: 0;
+  margin: 0 0 14px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.beat-list li {
+  color: var(--ink-soft);
+  padding-left: 20px; position: relative;
+}
+.beat-list li::before {
+  content: '';
+  position: absolute; left: 2px; top: 0.62em;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--clay);
+}
 .pull-quote {
   font-family: var(--font-display); font-style: italic; font-size: 17px;
   color: var(--ink); margin-top: 20px;
