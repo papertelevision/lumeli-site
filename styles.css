@@ -130,18 +130,21 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   margin-top: 34px;
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
 }
+/* the art always spans the hero's FULL height (top edge to bottom edge):
+   on wide screens the 40.5vw min-height drives both; when the text column
+   plus its fixed paddings is the taller of the two, the art scales up to
+   match, keeping the copy vertically centered against it */
 .hero-art2 {
-  position: absolute; top: 0; right: 0;
-  width: 56vw;
+  position: absolute; top: 0; bottom: 0; right: 0;
 }
 .hero-art2-main {
-  display: block; width: 100%; height: auto;
+  display: block; height: 100%; width: auto; margin-left: auto;
 }
 
 @media (max-width: 1180px) {
   .hero { padding-bottom: 0; min-height: 0; display: block; }
-  .hero-art2 { position: relative; width: 100%; margin-top: 44px; text-align: right; }
-  .hero-art2-main { width: 100%; max-width: 720px; margin-left: auto; }
+  .hero-art2 { position: relative; margin-top: 44px; text-align: right; }
+  .hero-art2-main { height: auto; width: 100%; max-width: 720px; margin-left: auto; }
 }
 
 /* ── Section rhythm & washes ── */
