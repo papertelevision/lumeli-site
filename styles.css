@@ -205,7 +205,7 @@ section { padding: 96px 0; }
   background: var(--cream);
   border: 1.5px dashed var(--clay); /* sketchy hand-drawn edge */
   border-radius: var(--radius-lg); padding: 30px 26px;
-  box-shadow: 0 14px 30px #f1e5ce;
+  box-shadow: -9px 8px 0 #f1e5ce; /* 40deg toward bottom-left, no blur */
   text-align: center;
 }
 .moment-icon {
