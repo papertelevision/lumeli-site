@@ -209,7 +209,8 @@ section { padding: 96px 0; }
   text-align: center;
 }
 .moment-icon {
-  display: block; width: min(230px, 80%); height: auto;
+  display: block; width: auto; height: auto;
+  max-width: min(230px, 80%); max-height: 154px; /* height-matched across all three */
   margin: 0 auto 22px;
 }
 .moment-voice {
