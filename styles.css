@@ -260,18 +260,24 @@ section { padding: 96px 0; }
   margin-bottom: 96px;
 }
 .ba-block:last-child { margin-bottom: 0; }
-/* the script label lives INSIDE the artwork's empty top-left corner,
-   as drawn in the original design — the scene centers as one piece */
+/* the script label sits in open space to the LEFT of the artwork with only
+   a whisper of overlap; the composite (label + art) is what gets centered,
+   so the pair shifts right by half the label's overhang */
 .ba-scene {
   position: relative;
   width: min(760px, 100%);
+  transform: translateX(min(115px, 8vw));
 }
 .ba-art { display: block; width: 100%; height: auto; }
 .ba-label {
-  position: absolute; top: 3.5%; left: 3%;
-  width: 26%; height: auto; /* scales with the scene, like part of the drawing */
+  position: absolute; top: 0; left: max(-230px, -16vw);
+  width: clamp(150px, 16vw, 250px); height: auto;
   z-index: 1;
   transition-delay: 0.35s; /* the script label breathes in after the scene */
+}
+@media (max-width: 900px) {
+  .ba-scene { transform: none; }
+  .ba-label { position: static; margin: 0 0 16px; display: block; }
 }
 
 /* ── Showcase: intro copy left, Signals mockup right ── */
