@@ -137,13 +137,6 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .hero-art2-main {
   display: block; width: 100%; height: auto;
 }
-.hero-art2-birds {
-  position: absolute; top: 6%; left: 5%;
-  width: 31%; height: auto;
-  mix-blend-mode: multiply;
-  filter: brightness(1.07); /* pushes the JPG's cream to white so multiply leaves only ink */
-  transition-delay: 0.7s; /* the birds arrive after the scene settles */
-}
 
 @media (max-width: 1180px) {
   .hero { padding-bottom: 0; min-height: 0; display: block; }
