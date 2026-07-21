@@ -121,7 +121,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   overflow: hidden;
 }
 .hero > .container { max-width: 1640px; width: 100%; } /* edge matches the nav's */
-.hero-copy { position: relative; z-index: 1; text-align: left; max-width: 640px; }
+.hero-copy { position: relative; z-index: 1; text-align: left; max-width: 640px; transform: translateY(-15px); }
 .hero-sub {
   font-size: 19px; color: var(--ink-soft);
   max-width: 26em; margin: 22px 0 0; line-height: 1.65;
@@ -141,10 +141,14 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   display: block; height: 100%; width: auto; margin-left: auto;
 }
 
-@media (max-width: 1180px) {
-  .hero { padding-bottom: 0; min-height: 0; display: block; }
-  .hero-art2 { position: relative; margin-top: 44px; text-align: right; }
+/* the side-by-side holds until true tablet width — the copy may overlap
+   the scene's open sky a little on the way down */
+@media (max-width: 900px) {
+  .hero { padding-bottom: 0; min-height: 0; display: flex; flex-direction: column; }
+  .hero > .container { order: 1; }
+  .hero-art2 { position: relative; order: 2; margin-top: 44px; text-align: right; }
   .hero-art2-main { height: auto; width: 100%; max-width: 720px; margin-left: auto; }
+  .hero-copy { transform: none; }
 }
 
 /* ── Section rhythm & washes ── */
