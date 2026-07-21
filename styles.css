@@ -202,9 +202,15 @@ section { padding: 96px 0; }
   margin: 56px auto;
 }
 .moment {
-  background: var(--card); border: 1px solid var(--card-line);
-  border-radius: var(--radius-lg); padding: 28px 26px; box-shadow: var(--shadow-soft);
-  text-align: left;
+  background: var(--cream);
+  border: 1.5px dashed var(--clay); /* sketchy hand-drawn edge */
+  border-radius: var(--radius-lg); padding: 30px 26px;
+  box-shadow: 0 14px 30px #f1e5ce;
+  text-align: center;
+}
+.moment-icon {
+  display: block; width: min(230px, 80%); height: auto;
+  margin: 0 auto 22px;
 }
 .moment-voice {
   font-family: var(--font-display); font-style: italic; font-size: 16.5px;
