@@ -110,12 +110,17 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   width: 0.19em; height: 0.19em; border-radius: 50%; background: var(--clay);
 }
 
-/* ── Hero: copy left, artwork pinned flush to the top-right ──────────
-   The text block's padding dictates the hero's height; the art fills that
-   height at its native aspect (height: 100%, width: auto), so its size and
-   its distance from the copy stay constant at every browser width. */
-.hero { position: relative; padding: 96px 0 110px; overflow: hidden; }
-.hero .container { max-width: 1640px; } /* content edge matches the nav's */
+/* ── Hero: copy left, artwork flush top-right, scaling with the window ──
+   The art holds ~56% of the viewport width at its native aspect, so the
+   original composition (art beside a fixed-measure text column) persists —
+   wider browsers simply get a proportionally larger scene. */
+.hero {
+  position: relative; padding: 96px 0 110px;
+  min-height: 40.5vw; /* the 56vw-wide art's height at its aspect ratio */
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero > .container { max-width: 1640px; width: 100%; } /* edge matches the nav's */
 .hero-copy { position: relative; z-index: 1; text-align: left; max-width: 640px; }
 .hero-sub {
   font-size: 19px; color: var(--ink-soft);
@@ -126,22 +131,24 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
 }
 .hero-art2 {
-  position: absolute; top: 0; right: 0; height: 100%;
+  position: absolute; top: 0; right: 0;
+  width: 56vw;
 }
 .hero-art2-main {
-  display: block; height: 100%; width: auto;
+  display: block; width: 100%; height: auto;
 }
 .hero-art2-birds {
   position: absolute; top: 6%; left: 5%;
   width: 31%; height: auto;
-  mix-blend-mode: multiply; /* only the sketch lines land on the scene */
+  mix-blend-mode: multiply;
+  filter: brightness(1.07); /* pushes the JPG's cream to white so multiply leaves only ink */
   transition-delay: 0.7s; /* the birds arrive after the scene settles */
 }
 
 @media (max-width: 1180px) {
-  .hero { padding-bottom: 0; }
-  .hero-art2 { position: relative; height: auto; margin-top: 44px; text-align: right; }
-  .hero-art2-main { height: auto; width: 100%; max-width: 720px; margin-left: auto; }
+  .hero { padding-bottom: 0; min-height: 0; display: block; }
+  .hero-art2 { position: relative; width: 100%; margin-top: 44px; text-align: right; }
+  .hero-art2-main { width: 100%; max-width: 720px; margin-left: auto; }
 }
 
 /* ── Section rhythm & washes ── */
