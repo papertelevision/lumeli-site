@@ -198,14 +198,14 @@ section { padding: 96px 0; }
   line-height: 1.5; color: var(--ink); max-width: 32em; margin: 0 auto;
 }
 .moments {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px;
   margin: 56px auto;
 }
 .moment {
   background: var(--cream);
   border: 1.5px dashed var(--clay); /* sketchy hand-drawn edge */
   border-radius: var(--radius-lg); padding: 30px 26px;
-  box-shadow: -9px 8px 0 #f1e5ce; /* 40deg toward bottom-left, no blur */
+  box-shadow: -9px 8px 0 #f2e1bf; /* 40deg toward bottom-left, no blur */
   text-align: center;
 }
 .moment-icon {
