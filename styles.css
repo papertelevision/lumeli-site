@@ -110,31 +110,38 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   width: 0.19em; height: 0.19em; border-radius: 50%; background: var(--clay);
 }
 
-/* ── Hero ── */
-.hero { position: relative; padding: 110px 0 28px; }
+/* ── Hero: copy left, artwork pinned flush to the top-right ──────────
+   The text block's padding dictates the hero's height; the art fills that
+   height at its native aspect (height: 100%, width: auto), so its size and
+   its distance from the copy stay constant at every browser width. */
+.hero { position: relative; padding: 96px 0 110px; overflow: hidden; }
 .hero .container { max-width: 1640px; } /* content edge matches the nav's */
-.hero-split {
-  display: grid; grid-template-columns: 0.95fr 1.1fr;
-  gap: 48px; align-items: center;
-}
-.hero-copy { text-align: left; }
+.hero-copy { position: relative; z-index: 1; text-align: left; max-width: 640px; }
 .hero-sub {
   font-size: 19px; color: var(--ink-soft);
-  max-width: 30em; margin: 22px 0 0; line-height: 1.65;
+  max-width: 26em; margin: 22px 0 0; line-height: 1.65;
 }
 .hero-cta {
   margin-top: 34px;
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
 }
-.hero-art img {
-  display: block; width: 100%; height: auto;
-  margin-top: 15px;
-  /* the artwork's background matches the page — no frame, it just belongs */
+.hero-art2 {
+  position: absolute; top: 0; right: 0; height: 100%;
+}
+.hero-art2-main {
+  display: block; height: 100%; width: auto;
+}
+.hero-art2-birds {
+  position: absolute; top: 6%; left: 5%;
+  width: 31%; height: auto;
+  mix-blend-mode: multiply; /* only the sketch lines land on the scene */
+  transition-delay: 0.7s; /* the birds arrive after the scene settles */
 }
 
-@media (max-width: 820px) {
-  .hero-split { grid-template-columns: 1fr; gap: 36px; }
-  .hero-art { max-width: 520px; }
+@media (max-width: 1180px) {
+  .hero { padding-bottom: 0; }
+  .hero-art2 { position: relative; height: auto; margin-top: 44px; text-align: right; }
+  .hero-art2-main { height: auto; width: 100%; max-width: 720px; margin-left: auto; }
 }
 
 /* ── Section rhythm & washes ── */
@@ -528,6 +535,10 @@ section { padding: 96px 0; }
 /* ── Motion ── */
 .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-up.in { opacity: 1; transform: none; }
+/* plain fade (no travel) for layered artwork */
+.fade-in { opacity: 0; transition: opacity 1.3s ease; }
+.fade-in.in { opacity: 1; }
+
 /* zero-to-full pop with a small spring overshoot, after the scene settles */
 .pop-in {
   opacity: 0; transform: scale(0);
@@ -540,6 +551,7 @@ section { padding: 96px 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .fade-up { opacity: 1; transform: none; transition: none; }
+  .fade-in { opacity: 1; transition: none; }
   .pop-in { opacity: 1; transform: none; transition: none; }
   .btn { transition: none; }
 }
