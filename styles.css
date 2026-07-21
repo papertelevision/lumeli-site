@@ -2,7 +2,7 @@
    Standalone static site: intentionally plain CSS, no build step. */
 
 :root {
-  --cream: #fceed4;       /* site background */
+  --cream: #f8eeda;       /* site background */
   --cream-soft: #f9f3e4;  /* header + lifted section washes */
   --cream-deep: #f1e2c2;
   --linen: #faf7f2;
@@ -116,7 +116,6 @@ h3 { font-size: 23px; margin-bottom: 10px; }
    wider browsers simply get a proportionally larger scene. */
 .hero {
   position: relative; padding: 96px 0 110px;
-  background: #f8eeda;
   min-height: 40.5vw; /* the 56vw-wide art's height at its aspect ratio */
   display: flex; align-items: center;
   overflow: hidden;
