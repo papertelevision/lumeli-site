@@ -203,7 +203,7 @@ section { padding: 96px 0; }
 .calm { text-align: center; }
 .calm-lede {
   font-family: var(--font-display); font-weight: 450; font-size: clamp(20px, 2.6vw, 25px);
-  line-height: 1.5; color: var(--ink); max-width: 32em; margin: 0 auto;
+  line-height: 1.5; color: var(--ink); max-width: 50em; margin: 0 auto;
 }
 .moments {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px;
