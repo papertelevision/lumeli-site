@@ -457,7 +457,7 @@ section { padding: 96px 0; }
 }
 .mock-chip.gold-chip { background: var(--gold-tint); color: var(--gold); }
 .mock-signal-sugg { font-size: 12px; font-style: italic; color: var(--ink-faint); line-height: 1.4; }
-.mock-actions { display: flex; gap: 9px; align-self: center; }
+.mock-actions { display: flex; gap: 9px; align-self: flex-end; padding-bottom: 2px; }
 .mock-actions i { font-style: normal; font-size: 12px; color: var(--ink-faint); opacity: 0.7; }
 .mock-actions .zz { font-family: var(--font-display); font-style: italic; font-weight: 700; color: #8fb8d4; }
 
