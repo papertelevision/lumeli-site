@@ -388,10 +388,10 @@ section { padding: 96px 0; }
 
 .mock-wrap { margin-top: 64px; user-select: none; }
 .mock-viewport { position: relative; width: 100%; max-width: 1040px; margin: 0 auto; }
-.mock-viewport-signals { aspect-ratio: 880 / 560; }
+.mock-viewport-signals { aspect-ratio: 880 / 720; }
 .mock-viewport-mail { aspect-ratio: 880 / 520; }
 .mock-stage { position: absolute; top: 0; left: 0; width: 880px; transform-origin: top left; }
-.mock-stage-signals { height: 560px; }
+.mock-stage-signals { height: 720px; }
 .mock-stage-mail { height: 520px; }
 
 .mock-window {
@@ -421,8 +421,15 @@ section { padding: 96px 0; }
 }
 .mock-greeting {
   font-family: var(--font-display); font-style: italic; font-size: 14.5px;
-  color: var(--ink-soft); margin: 6px 0 18px;
+  color: var(--ink-soft); margin: 6px 0 16px;
 }
+.mock-group-label {
+  font-size: 10.5px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--ink-faint);
+  margin: 0 0 9px 2px;
+}
+.mock-group-label.spaced { margin-top: 16px; }
+.mock-group-count { font-weight: 700; opacity: 0.6; margin-left: 3px; }
 .mock-signal {
   display: flex; align-items: flex-start; gap: 12px;
   background: var(--card); border: 1px solid var(--card-line);
