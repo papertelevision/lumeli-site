@@ -303,6 +303,16 @@ section { padding: 96px 0; }
   gap: 63px; align-items: center; /* wider breath between copy and mockup */
 }
 .showcase-copy { text-align: left; }
+.showcase-bird {
+  display: block; width: clamp(180px, 16vw, 250px); height: auto;
+  margin: 0 0 30px;
+}
+.showcase .container { position: relative; }
+.showcase-pencil {
+  position: absolute; right: -10px; bottom: -52px;
+  width: clamp(200px, 21vw, 310px); height: auto;
+  pointer-events: none;
+}
 .showcase-copy .body-lg { margin: 0; }
 .showcase .mock-wrap { margin-top: 0; }
 .showcase .mock-viewport { margin: 0 0 0 auto; } /* hug the right edge */
