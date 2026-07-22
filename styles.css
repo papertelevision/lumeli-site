@@ -300,7 +300,7 @@ section { padding: 96px 0; }
 .showcase .container { max-width: 1640px; }
 .showcase-split {
   display: grid; grid-template-columns: 0.85fr 1.15fr;
-  gap: 48px; align-items: center;
+  gap: 63px; align-items: center; /* wider breath between copy and mockup */
 }
 .showcase-copy { text-align: left; }
 .showcase-copy .body-lg { margin: 0; }
