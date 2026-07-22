@@ -303,15 +303,23 @@ section { padding: 96px 0; }
   gap: 63px; align-items: center; /* wider breath between copy and mockup */
 }
 .showcase-copy { text-align: left; }
+/* the bird's top edge lines up with the mockup's top edge across the split */
+.showcase-split { position: relative; }
 .showcase-bird {
-  display: block; width: clamp(180px, 16vw, 250px); height: auto;
-  margin: 0 0 30px;
+  position: absolute; top: 0; left: -20px;
+  width: clamp(180px, 16vw, 250px); height: auto;
+  pointer-events: none;
 }
 .showcase .container { position: relative; }
+/* the pencil rests across the mockup's lower-right corner */
 .showcase-pencil {
-  position: absolute; right: -10px; bottom: -52px;
+  position: absolute; right: 28px; bottom: -10px;
   width: clamp(200px, 21vw, 310px); height: auto;
   pointer-events: none;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .showcase-bird { position: static; margin: 0 0 26px -20px; display: block; }
 }
 .showcase-copy .body-lg { margin: 0; }
 .showcase .mock-wrap { margin-top: 0; }
