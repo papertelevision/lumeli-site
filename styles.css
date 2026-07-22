@@ -560,6 +560,28 @@ section { padding: 96px 0; }
   border-radius: 999px; padding: 7px 20px;
 }
 
+/* ── Mockup 1 entrance choreography ─────────────────────────────────
+   The wrapper's scroll-fade reveals the window first; the four signal
+   cards then file in from the right, one after another; once they've
+   settled, the Afternoon Brief rolls down from above. */
+.mock-wrap .mock-signal {
+  opacity: 0; transform: translateX(56px);
+  transition: opacity 0.55s ease, transform 0.6s cubic-bezier(0.22, 0.9, 0.35, 1);
+}
+.mock-wrap.in .mock-signal { opacity: 1; transform: none; }
+.mock-wrap.in .mock-signal:nth-of-type(1) { transition-delay: 0.4s; }
+.mock-wrap.in .mock-signal:nth-of-type(2) { transition-delay: 0.55s; }
+.mock-wrap.in .mock-signal:nth-of-type(3) { transition-delay: 0.7s; }
+.mock-wrap.in .mock-signal:nth-of-type(4) { transition-delay: 0.85s; }
+.mock-wrap .mock-brief {
+  opacity: 0; transform: rotate(1.1deg) translateY(-30px);
+  transition: opacity 0.7s ease, transform 0.75s cubic-bezier(0.22, 0.9, 0.35, 1);
+}
+.mock-wrap.in .mock-brief {
+  opacity: 1; transform: rotate(1.1deg) translateY(0);
+  transition-delay: 1.25s;
+}
+
 /* ── Motion ── */
 .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-up.in { opacity: 1; transform: none; }
@@ -581,6 +603,8 @@ section { padding: 96px 0; }
   .fade-up { opacity: 1; transform: none; transition: none; }
   .fade-in { opacity: 1; transition: none; }
   .pop-in { opacity: 1; transform: none; transition: none; }
+  .mock-wrap .mock-signal { opacity: 1; transform: none; transition: none; }
+  .mock-wrap .mock-brief { opacity: 1; transform: rotate(1.1deg); transition: none; }
   .btn { transition: none; }
 }
 
