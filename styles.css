@@ -315,6 +315,17 @@ section { padding: 96px 0; }
 .client { text-align: center; }
 .client .mock-wrap { margin-top: 56px; }
 
+/* ── Privacy ── */
+.privacy { text-align: center; }
+.trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+.trust-card {
+  background: var(--card); border: 1px solid var(--card-line);
+  border-radius: var(--radius-lg); padding: 26px 24px; box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+.trust-card h3 { font-size: 18px; }
+.trust-card p { font-size: 14.5px; color: var(--ink-soft); }
+
 /* ── Final CTA ── */
 .get { position: relative; overflow: hidden; text-align: center; padding-bottom: 120px; }
 .get::before {
@@ -559,7 +570,7 @@ section { padding: 96px 0; }
   .beat-flip .beat-copy { order: 1; }
   .beat-flip .beat-art { order: 2; }
   .beat-art { display: flex; justify-content: center; }
-  .moments { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+  .moments, .trust { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
 }
 
 @media (max-width: 520px) {
