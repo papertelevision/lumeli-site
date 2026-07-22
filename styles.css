@@ -569,10 +569,12 @@ section { padding: 96px 0; }
   transition: opacity 0.55s ease, transform 0.6s cubic-bezier(0.22, 0.9, 0.35, 1);
 }
 .mock-wrap.in .mock-signal { opacity: 1; transform: none; }
-.mock-wrap.in .mock-signal:nth-of-type(1) { transition-delay: 0.4s; }
-.mock-wrap.in .mock-signal:nth-of-type(2) { transition-delay: 0.55s; }
-.mock-wrap.in .mock-signal:nth-of-type(3) { transition-delay: 0.7s; }
-.mock-wrap.in .mock-signal:nth-of-type(4) { transition-delay: 0.85s; }
+/* nth-of-type counts ALL sibling divs (the header row is div #1),
+   so the four cards are divs 2 through 5 */
+.mock-wrap.in .mock-signal:nth-of-type(2) { transition-delay: 0.4s; }
+.mock-wrap.in .mock-signal:nth-of-type(3) { transition-delay: 0.55s; }
+.mock-wrap.in .mock-signal:nth-of-type(4) { transition-delay: 0.7s; }
+.mock-wrap.in .mock-signal:nth-of-type(5) { transition-delay: 0.85s; }
 .mock-wrap .mock-brief {
   opacity: 0; transform: rotate(1.1deg) translateY(-30px);
   transition: opacity 0.7s ease, transform 0.75s cubic-bezier(0.22, 0.9, 0.35, 1);
