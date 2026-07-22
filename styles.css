@@ -530,12 +530,16 @@ section { padding: 96px 0; }
 
 .mock-mail-body { display: flex; height: 428px; }
 .mock-list { width: 42%; background: var(--linen); border-right: 1px solid var(--sage-line); padding: 10px; overflow: hidden; }
+/* mirrors the app's .thread-row: every row is a white card with a
+   card-line border; unread adds the clay edge with padding compensated
+   so text stays column-aligned across all rows */
 .mock-thread {
   position: relative; padding: 10px 12px; border-radius: var(--radius);
-  border: 1px solid transparent; margin-bottom: 4px;
+  background: var(--card); border: 1px solid var(--card-line);
+  margin-bottom: 7px;
 }
-.mock-thread.unread { background: var(--card); border-color: var(--card-line); border-left: 3px solid var(--clay); }
-.mock-thread.selected { background: var(--card); border-color: var(--sage-line); box-shadow: var(--shadow-soft); }
+.mock-thread.unread { border-left: 3px solid var(--clay); padding-left: 10px; }
+.mock-thread.selected { border-color: var(--sage-line); box-shadow: var(--shadow-soft); }
 .mt-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); }
 .mock-thread.unread .mt-top b { color: var(--ink); }
 .mt-top b { font-weight: 800; }
