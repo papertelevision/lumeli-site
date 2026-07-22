@@ -578,13 +578,13 @@ section { padding: 96px 0; }
 }
 .sug-pop {
   position: absolute; top: 96px; left: 120px;
-  display: flex; flex-direction: column; gap: 8px;
+  display: flex; flex-direction: column; gap: 7px;
   background: var(--card); border: 1px solid var(--card-line);
   border-radius: var(--radius); box-shadow: var(--shadow-lift);
-  padding: 12px 15px; width: 220px;
+  padding: 12px 15px; width: 264px;
 }
 .sug-pop-q { font-size: 12.5px; color: var(--ink-soft); }
-.sug-pop-note { font-size: 11.5px; font-style: italic; color: var(--ink-faint); line-height: 1.45; }
+.sug-pop-note { font-size: 11.5px; font-style: italic; color: var(--ink-faint); line-height: 1.45; margin-top: -4px; }
 .sug-pop-actions { display: flex; align-items: center; gap: 10px; }
 .sug-pop-actions .fix {
   font-size: 12px; font-weight: 700; color: var(--clay-deep);
