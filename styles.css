@@ -640,7 +640,7 @@ section { padding: 96px 0; }
    After the rows settle, a cursor glides up to the 'recieve' typo;
    only once it arrives does the suggestion popover drop in. */
 .mock-cursor {
-  position: absolute; top: 88px; left: 168px; /* resting on the typo */
+  position: absolute; top: 86px; left: 300px; /* tip resting on 'recieve' */
   width: 15px; height: 20px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 20'%3E%3Cpath d='M2 1 L2 16 L6.2 12.6 L8.6 18.4 L11.2 17.2 L8.8 11.6 L14 11.2 Z' fill='%2333403a' stroke='%23ffffff' stroke-width='1.4'/%3E%3C/svg%3E") no-repeat center / contain;
   opacity: 0;
