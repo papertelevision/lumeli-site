@@ -406,6 +406,7 @@ section { padding: 96px 0; }
    Fixed 880px design stages, scaled as a unit by script.js. All inert. */
 
 .mock-wrap { margin-top: 64px; user-select: none; }
+.mock-stage { text-align: left; }
 .mock-viewport { position: relative; width: 100%; max-width: 1040px; margin: 0 auto; }
 .mock-viewport-signals { aspect-ratio: 880 / 720; }
 .mock-viewport-mail { aspect-ratio: 880 / 520; }
@@ -555,16 +556,21 @@ section { padding: 96px 0; }
 }
 .mock-field span { color: var(--ink-soft); font-weight: 600; }
 .mock-compose { position: relative; padding: 18px 4px; }
-.mock-body-text { font-size: 14px; line-height: 1.6; color: var(--ink); margin-bottom: 14px; }
+.mock-body-text { font-size: 14px; line-height: 1.6; color: var(--ink); margin-bottom: 12px; }
 .sug-underline {
   text-decoration: underline wavy var(--sea);
   text-decoration-thickness: 1.5px;
   text-underline-offset: 3px;
   background: var(--sea-tint); border-radius: 3px; padding: 0 1px;
 }
-.skeleton { height: 9px; border-radius: 999px; background: var(--linen-deep); margin-bottom: 10px; }
+.sug-underline-spelling {
+  text-decoration: underline wavy var(--clay);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  background: var(--clay-tint); border-radius: 3px; padding: 0 1px;
+}
 .sug-pop {
-  position: absolute; top: 52px; left: 110px;
+  position: absolute; top: 96px; left: 120px;
   display: flex; flex-direction: column; gap: 8px;
   background: var(--card); border: 1px solid var(--card-line);
   border-radius: var(--radius); box-shadow: var(--shadow-lift);
