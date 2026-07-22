@@ -306,7 +306,7 @@ section { padding: 96px 0; }
 /* the bird's top edge lines up with the mockup's top edge across the split */
 .showcase-split { position: relative; }
 .showcase-bird {
-  position: absolute; top: -40px; left: -20px;
+  position: absolute; top: -30px; left: 0;
   width: clamp(180px, 16vw, 250px); height: auto;
   pointer-events: none;
 }
@@ -319,7 +319,7 @@ section { padding: 96px 0; }
   z-index: 1;
 }
 @media (max-width: 900px) {
-  .showcase-bird { position: static; margin: 0 0 26px -20px; display: block; }
+  .showcase-bird { position: static; margin: 0 0 26px; display: block; }
   .showcase-copy { transform: none; }
 }
 .showcase-copy .body-lg { margin: 0; }
