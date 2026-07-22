@@ -540,7 +540,14 @@ section { padding: 96px 0; }
   margin-bottom: 7px;
 }
 .mock-thread.unread { border-left: 3px solid var(--clay); padding-left: 10px; }
-.mock-thread.selected { border-color: var(--sage-line); box-shadow: var(--shadow-soft); }
+.mock-thread.selected { border-color: var(--sea); background: var(--sea-tint); }
+/* the app's thread signal chip — '↑ owe' beneath the subject */
+.mock-thread-signal {
+  display: inline-block; margin-top: 4px;
+  font-size: 10.5px; font-weight: 800; letter-spacing: 0.02em;
+  border-radius: 999px; padding: 2px 9px;
+  background: var(--clay-tint); color: var(--clay-deep);
+}
 .mt-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink-soft); }
 .mock-thread.unread .mt-top b { color: var(--ink); }
 .mt-top b { font-weight: 800; }
@@ -570,13 +577,14 @@ section { padding: 96px 0; }
   background: var(--clay-tint); border-radius: 3px; padding: 0 1px;
 }
 .sug-pop {
-  position: absolute; top: 118px; left: 150px;
+  position: absolute; top: 96px; left: 120px;
   display: flex; flex-direction: column; gap: 8px;
   background: var(--card); border: 1px solid var(--card-line);
   border-radius: var(--radius); box-shadow: var(--shadow-lift);
   padding: 12px 15px; width: 220px;
 }
 .sug-pop-q { font-size: 12.5px; color: var(--ink-soft); }
+.sug-pop-note { font-size: 11.5px; font-style: italic; color: var(--ink-faint); line-height: 1.45; }
 .sug-pop-actions { display: flex; align-items: center; gap: 10px; }
 .sug-pop-actions .fix {
   font-size: 12px; font-weight: 700; color: var(--clay-deep);
