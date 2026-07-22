@@ -313,7 +313,7 @@ section { padding: 96px 0; }
 .showcase .container { position: relative; }
 /* the pencil rests across the mockup's lower-right corner */
 .showcase-pencil {
-  position: absolute; right: 140px; bottom: 34px;
+  position: absolute; right: 70px; bottom: 22px;
   width: clamp(200px, 21vw, 310px); height: auto;
   pointer-events: none;
   z-index: 1;
