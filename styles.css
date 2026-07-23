@@ -234,7 +234,7 @@ section { padding: 96px 0; }
 .away-card {
   background: var(--card); border: 1px solid var(--card-line);
   border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-lift);
-  max-width: 400px;
+  max-width: 470px;
 }
 .away-title { font-family: var(--font-display); font-weight: 600; font-size: 16.5px; margin-bottom: 10px; }
 .away-line { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 9px; }
@@ -242,7 +242,12 @@ section { padding: 96px 0; }
 .away-list { list-style: none; padding: 0; margin: 0 0 4px; display: flex; flex-direction: column; gap: 7px; }
 .away-list li { display: flex; align-items: baseline; gap: 7px; font-size: 12.5px; }
 .away-list .check { flex-shrink: 0; }
-.away-summary { color: var(--ink); font-weight: 600; min-width: 0; }
+.away-summary {
+  color: var(--ink); font-weight: 600;
+  white-space: nowrap;
+  background: var(--linen); /* subtle pill behind each handled task */
+  border-radius: 999px; padding: 3px 11px;
+}
 .away-meta { color: var(--ink-faint); font-size: 11px; flex-shrink: 0; margin-left: auto; }
 .away-saved {
   margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--sea);
