@@ -249,6 +249,13 @@ section { padding: 96px 0; }
   border-radius: 999px; padding: 3px 11px;
 }
 .away-meta { color: var(--ink-faint); font-size: 11px; flex-shrink: 0; margin-left: auto; }
+/* narrower views: rows wrap — the meta drops beneath its pill instead of
+   spilling past the card edge */
+@media (max-width: 1240px) {
+  .away-list li { flex-wrap: wrap; }
+  .away-summary { white-space: normal; }
+  .away-meta { margin-left: 24px; flex-basis: 100%; text-align: left; }
+}
 .away-saved {
   margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--sea);
   background: var(--sea-tint); border-radius: 999px; padding: 6px 14px; display: inline-block;
