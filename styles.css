@@ -394,8 +394,8 @@ section { padding: 96px 0; }
 /* the scenes drift in more slowly, and only after their script label lands */
 .ba-art.fade-up { transition-duration: 1.5s; transition-delay: 0.65s; }
 .ba-label {
-  position: absolute; top: 0; left: max(-230px, -16vw);
-  width: clamp(150px, 16vw, 250px); height: auto;
+  position: absolute; top: 0; left: -12vw;
+  width: 14vw; height: auto;
   z-index: 1;
 }
 @media (max-width: 900px) {
