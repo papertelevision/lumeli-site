@@ -179,14 +179,16 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   50% { opacity: var(--peak); transform: translate(var(--dx, 10px), var(--dy, -14px)); }
   70% { opacity: 0; }
 }
-.wisp:nth-child(1) { top: 16%; left: 6%; --size: 16px; --cycle: 8.5s; --peak: 0.9; --dx: 12px; --dy: -16px; }
-.wisp:nth-child(2) { top: 8%; left: 22%; --size: 6px; --cycle: 11s; animation-delay: -4s; --peak: 0.7; --dx: -9px; --dy: -12px; }
-.wisp:nth-child(3) { top: 38%; left: 14%; --size: 22px; --cycle: 13s; animation-delay: -7s; --peak: 0.8; --dx: 14px; --dy: -10px; }
-.wisp:nth-child(4) { top: 58%; left: 4%; --size: 9px; --cycle: 9.5s; animation-delay: -2.5s; --peak: 0.85; --dx: -11px; --dy: -15px; }
-.wisp:nth-child(5) { top: 72%; left: 27%; --size: 5px; --cycle: 12s; animation-delay: -9s; --peak: 0.72; --dx: 8px; --dy: -18px; }
-.wisp:nth-child(6) { top: 27%; left: 33%; --size: 12px; --cycle: 10.5s; animation-delay: -5.5s; --peak: 0.82; --dx: -13px; --dy: -9px; }
-.wisp:nth-child(7) { top: 66%; left: 38%; --size: 18px; --cycle: 14s; animation-delay: -11s; --peak: 0.68; --dx: 10px; --dy: -13px; }
-.wisp:nth-child(8) { top: 47%; left: 44%; --size: 7px; --cycle: 10s; animation-delay: -6.5s; --peak: 0.78; --dx: -8px; --dy: -11px; }
+.wisp:nth-child(1) { top: 16%; left: 1.5%; --size: 16px; --cycle: 8.5s; --peak: 0.9; --dx: 12px; --dy: -16px; }
+.wisp:nth-child(2) { top: 8%; left: 20%; --size: 6px; --cycle: 11s; animation-delay: -4s; --peak: 0.7; --dx: -9px; --dy: -12px; }
+.wisp:nth-child(3) { top: 40%; left: 10%; --size: 40px; --cycle: 13s; animation-delay: -7s; --peak: 0.7; --dx: 14px; --dy: -10px; }
+.wisp:nth-child(4) { top: 60%; left: 3%; --size: 9px; --cycle: 9.5s; animation-delay: -2.5s; --peak: 0.85; --dx: -11px; --dy: -15px; }
+.wisp:nth-child(5) { top: 74%; left: 24%; --size: 5px; --cycle: 12s; animation-delay: -9s; --peak: 0.72; --dx: 8px; --dy: -18px; }
+.wisp:nth-child(6) { top: 24%; left: 31%; --size: 12px; --cycle: 10.5s; animation-delay: -5.5s; --peak: 0.82; --dx: -13px; --dy: -9px; }
+.wisp:nth-child(7) { top: 64%; left: 40%; --size: 36px; --cycle: 14s; animation-delay: -11s; --peak: 0.62; --dx: 10px; --dy: -13px; }
+.wisp:nth-child(8) { top: 46%; left: 52%; --size: 7px; --cycle: 10s; animation-delay: -6.5s; --peak: 0.78; --dx: -8px; --dy: -11px; }
+.wisp:nth-child(9) { top: 12%; left: 43%; --size: 20px; --cycle: 12.5s; animation-delay: -3s; --peak: 0.75; --dx: 11px; --dy: -14px; }
+.wisp:nth-child(10) { top: 82%; left: 12%; --size: 44px; --cycle: 15s; animation-delay: -8s; --peak: 0.55; --dx: -12px; --dy: -12px; }
 
 /* ── Section rhythm & washes ── */
 section { padding: 96px 0; }
