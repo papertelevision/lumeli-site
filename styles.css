@@ -185,9 +185,9 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 .wisp:nth-child(4) { top: 60%; left: 3%; --size: 9px; --cycle: 9.5s; animation-delay: -2.5s; --peak: 0.85; --dx: -11px; --dy: -15px; }
 .wisp:nth-child(5) { top: 74%; left: 24%; --size: 5px; --cycle: 12s; animation-delay: -9s; --peak: 0.72; --dx: 8px; --dy: -18px; }
 .wisp:nth-child(6) { top: 24%; left: 31%; --size: 12px; --cycle: 10.5s; animation-delay: -5.5s; --peak: 0.82; --dx: -13px; --dy: -9px; }
-.wisp:nth-child(7) { top: 64%; left: 40%; --size: 36px; --cycle: 14s; animation-delay: -11s; --peak: 0.62; --dx: 10px; --dy: -13px; }
-.wisp:nth-child(8) { top: 46%; left: 52%; --size: 7px; --cycle: 10s; animation-delay: -6.5s; --peak: 0.78; --dx: -8px; --dy: -11px; }
-.wisp:nth-child(9) { top: 12%; left: 43%; --size: 20px; --cycle: 12.5s; animation-delay: -3s; --peak: 0.75; --dx: 11px; --dy: -14px; }
+.wisp:nth-child(7) { top: 66%; left: 54%; --size: 36px; --cycle: 14s; animation-delay: -11s; --peak: 0.62; --dx: 10px; --dy: -13px; }
+.wisp:nth-child(8) { top: 46%; left: 58%; --size: 7px; --cycle: 10s; animation-delay: -6.5s; --peak: 0.78; --dx: -8px; --dy: -11px; }
+.wisp:nth-child(9) { top: 12%; left: 48%; --size: 20px; --cycle: 12.5s; animation-delay: -3s; --peak: 0.75; --dx: 11px; --dy: -14px; }
 .wisp:nth-child(10) { top: 82%; left: 12%; --size: 44px; --cycle: 15s; animation-delay: -8s; --peak: 0.55; --dx: -12px; --dy: -12px; }
 
 /* ── Section rhythm & washes ── */
