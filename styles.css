@@ -172,6 +172,7 @@ section { padding: 96px 0; }
 .beat:last-child { margin-bottom: 0; }
 .beat-flip .beat-copy { order: 2; }
 .beat-flip .beat-art { order: 1; }
+.beat-art { position: relative; }
 .beat-copy p { color: var(--ink-soft); margin-bottom: 14px; }
 .beat-copy p:last-child { margin-bottom: 0; }
 .beat-list {
@@ -232,9 +233,19 @@ section { padding: 96px 0; }
 .arc-word { font-family: var(--font-display); font-style: italic; font-size: 15.5px; color: var(--ink); }
 
 .away-card {
+  position: relative; z-index: 1;
   background: var(--card); border: 1px solid var(--card-line);
   border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-lift);
   max-width: 440px;
+}
+/* steaming coffee resting past the card's lower-right, sketch-style */
+.away-coffee {
+  position: absolute; right: max(-140px, -9vw); bottom: -60px;
+  width: clamp(160px, 16vw, 240px); height: auto;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .away-coffee { display: none; } /* stacked view has no corner to rest in */
 }
 .away-title { font-family: var(--font-display); font-weight: 600; font-size: 16.5px; margin-bottom: 10px; }
 .away-line { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 9px; }
