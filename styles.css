@@ -212,6 +212,19 @@ section { padding: 96px 0; }
 .beat-flip .beat-copy { order: 2; }
 .beat-flip .beat-art { order: 1; }
 .beat-art { position: relative; }
+/* dashed squiggle trailing in from the left margin; its star tip lands
+   just left of the headline like a hand-drawn bullet */
+.beat-squiggle { position: relative; }
+.beat-squiggle-art {
+  position: absolute;
+  top: 50%; transform: translateY(-82%);
+  left: -150px;
+  width: 145px; height: auto;
+  pointer-events: none;
+}
+@media (max-width: 1500px) {
+  .beat-squiggle-art { display: none; } /* no margin room to trail through */
+}
 .beat-copy p { color: var(--ink-soft); margin-bottom: 14px; }
 .beat-copy p:last-child { margin-bottom: 0; }
 .beat-list {
