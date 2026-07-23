@@ -265,7 +265,7 @@ section { padding: 96px 0; }
 /* storybook bird: four frames crossfaded by scroll (script.js sets
    data-frame 0-3); the box keeps the final frame's proportions */
 .why-bird {
-  position: relative; width: 170px; aspect-ratio: 400 / 441;
+  position: relative; width: 200px; aspect-ratio: 400 / 441;
   margin: 0 auto 36px;
 }
 .why-bird-frame {
