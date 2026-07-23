@@ -151,6 +151,42 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   .hero-copy { transform: none; }
 }
 
+/* ── Firefly wisps: soft glowing motes drifting over the hero ───────
+   Layered above the artwork and copy backdrop; each wisp breathes in and
+   out on its own long cycle while drifting slightly, like lens dust
+   catching light. Negative delays keep the field mid-motion on load. */
+.wisps {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 2; /* above the art (and copy text, but they never overlap it) */
+  overflow: hidden;
+}
+.wisp {
+  --size: 10px;
+  --peak: 0.5;
+  position: absolute;
+  width: var(--size); height: var(--size);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 247, 224, 0.95), rgba(246, 236, 215, 0.35) 55%, transparent 75%);
+  box-shadow: 0 0 12px 4px rgba(185, 138, 46, 0.18);
+  opacity: 0;
+  animation: wisp-breathe var(--cycle, 9s) ease-in-out infinite;
+}
+@keyframes wisp-breathe {
+  0%, 100% { opacity: 0; transform: translate(0, 0); }
+  35% { opacity: var(--peak); }
+  50% { opacity: var(--peak); transform: translate(var(--dx, 10px), var(--dy, -14px)); }
+  70% { opacity: 0; }
+}
+.wisp:nth-child(1) { top: 18%; left: 44%; --size: 9px; --cycle: 8.5s; --peak: 0.55; --dx: 12px; --dy: -16px; }
+.wisp:nth-child(2) { top: 9%; left: 58%; --size: 6px; --cycle: 11s; animation-delay: -4s; --peak: 0.4; --dx: -9px; --dy: -12px; }
+.wisp:nth-child(3) { top: 26%; left: 66%; --size: 12px; --cycle: 13s; animation-delay: -7s; --peak: 0.45; --dx: 14px; --dy: -10px; }
+.wisp:nth-child(4) { top: 13%; left: 78%; --size: 7px; --cycle: 9.5s; animation-delay: -2.5s; --peak: 0.5; --dx: -11px; --dy: -15px; }
+.wisp:nth-child(5) { top: 34%; left: 52%; --size: 5px; --cycle: 12s; animation-delay: -9s; --peak: 0.42; --dx: 8px; --dy: -18px; }
+.wisp:nth-child(6) { top: 22%; left: 88%; --size: 10px; --cycle: 10.5s; animation-delay: -5.5s; --peak: 0.48; --dx: -13px; --dy: -9px; }
+.wisp:nth-child(7) { top: 40%; left: 72%; --size: 8px; --cycle: 14s; animation-delay: -11s; --peak: 0.38; --dx: 10px; --dy: -13px; }
+.wisp:nth-child(8) { top: 6%; left: 36%; --size: 6px; --cycle: 10s; animation-delay: -6.5s; --peak: 0.45; --dx: -8px; --dy: -11px; }
+
 /* ── Section rhythm & washes ── */
 section { padding: 96px 0; }
 
@@ -793,6 +829,7 @@ section { padding: 96px 0; }
 .mock-wrap.in .mock-group-label.spaced { opacity: 1; transition-delay: 0.85s; }
 .mock-wrap .mock-brief { opacity: 1; transform: rotate(1.1deg); transition: none; }
   .btn { transition: none; }
+  .wisp { animation: none; opacity: 0; }
 }
 
 /* ── Responsive ── */
