@@ -251,7 +251,7 @@ section { padding: 96px 0; }
 /* Beat vignettes */
 .vign-card {
   display: flex; align-items: flex-start; gap: 12px;
-  background: var(--card); border: 1px solid var(--card-line);
+  background: #fffbf0; border: 1px solid var(--card-line);
   border-radius: var(--radius-lg); padding: 16px 18px; box-shadow: var(--shadow-soft);
   max-width: 420px;
 }
@@ -287,7 +287,7 @@ section { padding: 96px 0; }
 
 .away-card {
   position: relative; z-index: 1;
-  background: var(--card); border: 1px solid var(--card-line);
+  background: #fffbf0; border: 1px solid var(--card-line);
   border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-lift);
   max-width: 440px;
 }
