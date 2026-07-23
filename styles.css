@@ -309,7 +309,7 @@ section { padding: 96px 0; }
 .away-summary {
   color: var(--ink); font-weight: 600;
   white-space: nowrap;
-  background: var(--linen); /* subtle pill behind each handled task */
+  background: #f8f2e1; /* subtle pill behind each handled task */
   border-radius: 999px; padding: 3px 11px;
 }
 .away-meta { color: var(--ink-faint); font-size: 11px; flex-shrink: 0; margin-left: auto; }
