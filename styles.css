@@ -270,7 +270,7 @@ section { padding: 96px 0; }
   font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
   padding: 2px 8px; border-radius: 999px;
 }
-.vign-type.type-task { background: var(--clay-tint); color: var(--clay-deep); }
+.vign-type.type-task { background: var(--clay-tint); color: var(--clay); }
 .vign-type.type-follow_up { background: var(--sage-soft); color: var(--ink-soft); }
 
 .day-arc { position: relative; display: flex; justify-content: space-between; padding: 0 6px; width: 100%; }
