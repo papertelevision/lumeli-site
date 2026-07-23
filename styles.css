@@ -217,9 +217,9 @@ section { padding: 96px 0; }
 .beat-squiggle { position: relative; }
 .beat-squiggle-art {
   position: absolute;
-  top: 50%; transform: translateY(-82%);
-  left: -150px;
-  width: 145px; height: auto;
+  top: 20%;
+  left: -30px;
+  width: 95px; height: auto;
   pointer-events: none;
 }
 @media (max-width: 1500px) {
