@@ -767,8 +767,8 @@ section { padding: 96px 0; }
 /* the sketch frame wraps the whole mail mockup, sitting just outside its
    window shadow; drawn by the shared tracer once the mockup reveals */
 .mail-sketch {
-  position: absolute; inset: -26px;
-  width: calc(100% + 52px); height: calc(100% + 52px);
+  position: absolute; inset: -15px;
+  width: calc(100% + 30px); height: calc(100% + 30px);
   z-index: 2;
 }
 .mock-wrap.in .trust-sketch-tracer {
