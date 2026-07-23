@@ -268,7 +268,7 @@ section { padding: 96px 0; }
   opacity: 0.35; border-radius: 2px;
 }
 .arc-stop { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 25%; }
-.arc-dot { width: 12px; height: 12px; border-radius: 50%; border: 3px solid var(--linen); box-shadow: var(--shadow-soft); }
+.arc-dot { width: 12px; height: 12px; border-radius: 50%; border: 3px solid var(--linen); box-shadow: var(--shadow-soft); margin-top: -8px; }
 .arc-name { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); }
 .arc-word { font-family: var(--font-display); font-style: italic; font-size: 15.5px; color: var(--ink); }
 
