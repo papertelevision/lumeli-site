@@ -240,8 +240,8 @@ section { padding: 96px 0; }
 }
 /* steaming coffee resting past the card's lower-right, sketch-style */
 .away-coffee {
-  position: absolute; right: max(-140px, -9vw); bottom: -60px;
-  width: clamp(160px, 16vw, 240px); height: auto;
+  position: absolute; right: max(-160px, -11vw); bottom: -128px;
+  width: 280px; height: auto;
   pointer-events: none;
 }
 @media (max-width: 900px) {
