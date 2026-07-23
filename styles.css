@@ -692,6 +692,15 @@ section { padding: 96px 0; }
 .mock-wrap.in .mock-thread:nth-of-type(4) { transition-delay: 0.85s; }
 .mock-wrap.in .mock-thread:nth-of-type(5) { transition-delay: 1s; }
 
+/* ── Beat vignette cards file in like the mockup's signals ── */
+.beat .vign-card {
+  opacity: 0; transform: translateX(56px);
+  transition: opacity 0.55s ease, transform 0.6s cubic-bezier(0.22, 0.9, 0.35, 1);
+}
+.beat.in .vign-card { opacity: 1; transform: none; }
+.beat.in .vign-card:nth-of-type(1) { transition-delay: 0.35s; }
+.beat.in .vign-card:nth-of-type(2) { transition-delay: 0.5s; }
+
 /* ── Mockup 2 pointer-and-popover scene ─────────────────────────────
    After the rows settle, a cursor glides up to the 'recieve' typo;
    only once it arrives does the suggestion popover drop in. */
@@ -741,6 +750,7 @@ section { padding: 96px 0; }
   .pop-in { opacity: 1; transform: none; transition: none; }
   .mock-wrap .mock-signal { opacity: 1; transform: none; transition: none; }
   .mock-wrap .mock-thread { opacity: 1; transform: none; transition: none; }
+  .beat .vign-card { opacity: 1; transform: none; transition: none; }
   .mock-cursor { display: none; }
   .trust-sketch-tracer { stroke-dashoffset: 0; transition: none; }
   .why-bird .why-bird-frame { transition: none; opacity: 0; }
