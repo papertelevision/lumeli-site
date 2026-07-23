@@ -43,8 +43,9 @@ if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const setFrame = () => {
     const rect = bird.getBoundingClientRect()
     const vh = window.innerHeight
-    // 0 when the bird enters at the bottom; 1 by the time it reaches ~55% up
-    const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh * 0.45)))
+    // starts only once the bird is FULLY in view (bottom edge on screen),
+    // then plays across the next ~30% of the viewport's scroll
+    const progress = Math.min(1, Math.max(0, (vh - rect.bottom) / (vh * 0.3)))
     const frame = Math.min(3, Math.floor(progress * 4))
     if (bird.dataset.frame !== String(frame)) bird.dataset.frame = String(frame)
   }
