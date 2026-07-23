@@ -40,18 +40,25 @@ if (yearEl) yearEl.textContent = String(new Date().getFullYear())
 // and stops on the final frame.
 const bird = document.querySelector('.why-bird')
 if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const setFrame = () => {
-    const rect = bird.getBoundingClientRect()
-    const vh = window.innerHeight
-    // starts only once the bird is FULLY in view (bottom edge on screen),
-    // then plays across the next ~30% of the viewport's scroll
-    const progress = Math.min(1, Math.max(0, (vh - rect.bottom) / (vh * 0.3)))
-    const frame = Math.min(3, Math.floor(progress * 4))
-    if (bird.dataset.frame !== String(frame)) bird.dataset.frame = String(frame)
-  }
-  setFrame()
-  window.addEventListener('scroll', setFrame, { passive: true })
-  window.addEventListener('resize', setFrame, { passive: true })
+  // Scroll only TRIGGERS the flip-book; playback runs on its own clock so
+  // every frame gets its moment regardless of scroll speed.
+  const FRAME_MS = 650
+  const birdObserver = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue
+        birdObserver.disconnect()
+        let frame = 0
+        const tick = setInterval(() => {
+          frame++
+          bird.dataset.frame = String(frame)
+          if (frame >= 3) clearInterval(tick)
+        }, FRAME_MS)
+      }
+    },
+    { threshold: 1 } // fully visible before the story begins
+  )
+  birdObserver.observe(bird)
 } else if (bird) {
   bird.dataset.frame = '3'
 }
