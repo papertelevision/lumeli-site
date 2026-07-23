@@ -262,10 +262,21 @@ section { padding: 96px 0; }
 .moment-caption { font-size: 13.5px; color: var(--ink-soft); }
 .calm-close { color: var(--ink-soft); max-width: 40em; margin: 0 auto; }
 
+/* storybook bird: four frames crossfaded by scroll (script.js sets
+   data-frame 0-3); the box keeps the final frame's proportions */
 .why-bird {
-  display: block; width: 170px; height: auto;
+  position: relative; width: 170px; aspect-ratio: 400 / 441;
   margin: 0 auto 36px;
 }
+.why-bird-frame {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain;
+  opacity: 0; transition: opacity 0.18s ease; /* quick, flickery, old-fashioned */
+}
+.why-bird[data-frame="0"] .why-bird-frame:nth-child(1),
+.why-bird[data-frame="1"] .why-bird-frame:nth-child(2),
+.why-bird[data-frame="2"] .why-bird-frame:nth-child(3),
+.why-bird[data-frame="3"] .why-bird-frame:nth-child(4) { opacity: 1; }
 
 /* ── Before / After Lumeli ── */
 .beforeafter { padding: 0 0 120px; }
@@ -718,6 +729,8 @@ section { padding: 96px 0; }
   .mock-wrap .mock-thread { opacity: 1; transform: none; transition: none; }
   .mock-cursor { display: none; }
   .trust-sketch-tracer { stroke-dashoffset: 0; transition: none; }
+  .why-bird .why-bird-frame { transition: none; opacity: 0; }
+  .why-bird .why-bird-frame:nth-child(4) { opacity: 1; }
   .mock-wrap .sug-pop { opacity: 1; transform: none; transition: none; }
   .mock-wrap .mock-group-label.spaced { opacity: 1; transition: none; }
   /* the ANYTIME label arrives together with its card */

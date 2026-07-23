@@ -34,3 +34,23 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 // Copyright year stays current without an annual edit.
 const yearEl = document.getElementById('copyright-year')
 if (yearEl) yearEl.textContent = String(new Date().getFullYear())
+
+// Storybook bird: scroll position drives the four-frame flip-book. The
+// sequence runs as the bird rises through the lower half of the viewport
+// and stops on the final frame.
+const bird = document.querySelector('.why-bird')
+if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const setFrame = () => {
+    const rect = bird.getBoundingClientRect()
+    const vh = window.innerHeight
+    // 0 when the bird enters at the bottom; 1 by the time it reaches ~55% up
+    const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh * 0.45)))
+    const frame = Math.min(3, Math.floor(progress * 4))
+    if (bird.dataset.frame !== String(frame)) bird.dataset.frame = String(frame)
+  }
+  setFrame()
+  window.addEventListener('scroll', setFrame, { passive: true })
+  window.addEventListener('resize', setFrame, { passive: true })
+} else if (bird) {
+  bird.dataset.frame = '3'
+}
