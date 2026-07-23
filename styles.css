@@ -772,6 +772,45 @@ section { padding: 96px 0; }
 .beat.in .vign-card:nth-of-type(1) { transition-delay: 0.35s; }
 .beat.in .vign-card:nth-of-type(2) { transition-delay: 0.5s; }
 
+/* ── Day-arc choreography: suns rise left to right, the line draws
+   beneath them, dots surfacing as it passes, captions fading in step ── */
+.beat .arc-icon {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 0.9, 0.35, 1);
+}
+.beat .arc-name, .beat .arc-word {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.beat .arc-dot {
+  opacity: 0; transform: scale(0.3);
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.beat .arc-line {
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform 1.7s cubic-bezier(0.3, 0.6, 0.3, 1) 0.4s;
+}
+.beat.in .arc-icon, .beat.in .arc-name, .beat.in .arc-word { opacity: 1; transform: none; }
+.beat.in .arc-dot { opacity: 1; transform: scale(1); }
+.beat.in .arc-line { transform: scaleX(1); }
+.beat.in .arc-stop:nth-child(2) .arc-icon,
+.beat.in .arc-stop:nth-child(2) .arc-name,
+.beat.in .arc-stop:nth-child(2) .arc-word { transition-delay: 0.45s; }
+.beat.in .arc-stop:nth-child(3) .arc-icon,
+.beat.in .arc-stop:nth-child(3) .arc-name,
+.beat.in .arc-stop:nth-child(3) .arc-word { transition-delay: 0.9s; }
+.beat.in .arc-stop:nth-child(4) .arc-icon,
+.beat.in .arc-stop:nth-child(4) .arc-name,
+.beat.in .arc-stop:nth-child(4) .arc-word { transition-delay: 1.35s; }
+.beat.in .arc-stop:nth-child(5) .arc-icon,
+.beat.in .arc-stop:nth-child(5) .arc-name,
+.beat.in .arc-stop:nth-child(5) .arc-word { transition-delay: 1.8s; }
+/* dots surface as the line's tip passes each stop */
+.beat.in .arc-stop:nth-child(2) .arc-dot { transition-delay: 0.5s; }
+.beat.in .arc-stop:nth-child(3) .arc-dot { transition-delay: 1s; }
+.beat.in .arc-stop:nth-child(4) .arc-dot { transition-delay: 1.5s; }
+.beat.in .arc-stop:nth-child(5) .arc-dot { transition-delay: 1.95s; }
+
 /* ── Mockup 2 pointer-and-popover scene ─────────────────────────────
    After the rows settle, a cursor glides up to the 'recieve' typo;
    only once it arrives does the suggestion popover drop in. */
@@ -822,6 +861,9 @@ section { padding: 96px 0; }
   .mock-wrap .mock-signal { opacity: 1; transform: none; transition: none; }
   .mock-wrap .mock-thread { opacity: 1; transform: none; transition: none; }
   .beat .vign-card { opacity: 1; transform: none; transition: none; }
+  .beat .arc-icon, .beat .arc-name, .beat .arc-word, .beat .arc-dot, .beat .arc-line {
+    opacity: 1; transform: none; transition: none;
+  }
   .mock-cursor { display: none; }
   .trust-sketch-tracer { stroke-dashoffset: 0; transition: none; }
   .why-bird .why-bird-frame { transition: none; opacity: 0; }
