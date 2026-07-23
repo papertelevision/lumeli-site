@@ -42,7 +42,7 @@ const bird = document.querySelector('.why-bird')
 if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   // Scroll only TRIGGERS the flip-book; playback runs on its own clock so
   // every frame gets its moment regardless of scroll speed.
-  const FRAME_MS = 1100
+  const FRAME_MS = 850
   const birdObserver = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
