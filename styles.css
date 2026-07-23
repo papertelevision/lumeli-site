@@ -200,11 +200,25 @@ section { padding: 96px 0; }
   display: flex; align-items: flex-start; gap: 12px;
   background: var(--card); border: 1px solid var(--card-line);
   border-radius: var(--radius-lg); padding: 16px 18px; box-shadow: var(--shadow-soft);
-  max-width: 380px;
+  max-width: 420px;
 }
+.vign-wide { max-width: 470px; } /* Meadowlark title holds one line */
 .vign-offset { margin: 14px 0 0 44px; box-shadow: var(--shadow-lift); }
-.vign-text { display: flex; flex-direction: column; gap: 7px; }
-.vign-title { font-size: 14px; font-weight: 700; line-height: 1.35; }
+.vign-text { display: flex; flex-direction: column; gap: 7px; flex: 1; min-width: 0; }
+.vign-title { font-size: 14px; font-weight: 700; line-height: 1.35; white-space: nowrap; }
+/* right rail: type pill top, actions bottom — like the app's signal-side */
+.vign-side {
+  align-self: stretch; flex-shrink: 0;
+  display: flex; flex-direction: column;
+  justify-content: space-between; align-items: flex-end; gap: 10px;
+}
+.vign-type {
+  display: inline-block;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 2px 8px; border-radius: 999px;
+}
+.vign-type.type-task { background: var(--clay-tint); color: var(--clay-deep); }
+.vign-type.type-follow_up { background: var(--sage-soft); color: var(--ink-soft); }
 
 .day-arc { position: relative; display: flex; justify-content: space-between; padding: 26px 6px 0; width: 100%; }
 .arc-line {
