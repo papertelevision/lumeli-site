@@ -766,9 +766,14 @@ section { padding: 96px 0; }
 
 /* the sketch frame wraps the whole mail mockup, sitting just outside its
    window shadow; drawn by the shared tracer once the mockup reveals */
+/* anchored to the WINDOW's rendered edges, not the taller stage box:
+   the window occupies rows 8..488 of the 520-tall design stage */
 .mail-sketch {
-  position: absolute; inset: -15px;
-  width: calc(100% + 30px); height: calc(100% + 30px);
+  position: absolute;
+  top: calc(1.54% - 15px);     /* 8/520 */
+  bottom: calc(6.15% - 15px);  /* (520-488)/520 */
+  left: -15px; right: -15px;
+  width: auto; height: auto;
   z-index: 2;
 }
 .mock-wrap.in .trust-sketch-tracer {
