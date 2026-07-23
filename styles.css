@@ -217,7 +217,7 @@ section { padding: 96px 0; }
 .beat-squiggle { position: relative; }
 .beat-squiggle-art {
   position: absolute;
-  top: 20%;
+  top: -32%;
   left: -30px;
   width: 95px; height: auto;
   pointer-events: none;
