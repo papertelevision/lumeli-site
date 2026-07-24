@@ -69,11 +69,12 @@ const baBlocks = baWrap ? baWrap.querySelectorAll('.ba-block') : []
 if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   baWrap.classList.add('enhanced')
   const baScroll = () => {
-    const rect = baWrap.getBoundingClientRect()
-    const vh = window.innerHeight
-    // Before while the stage sits low in the viewport; fully After by the
-    // time its top rises to ~28% — the page scrolls normally throughout.
-    const t = Math.min(1, Math.max(0, (vh * 0.72 - rect.top) / (vh * 0.44)))
+    const runway = baWrap.offsetHeight - window.innerHeight
+    if (runway <= 0) return
+    const p = Math.min(1, Math.max(0, -baWrap.getBoundingClientRect().top / runway))
+    // hold Before through the first quarter, dissolve through the middle,
+    // hold After for the final fifth before release
+    const t = Math.min(1, Math.max(0, (p - 0.25) / 0.55))
     baBlocks[0].style.opacity = String(1 - t)
     baBlocks[1].style.opacity = String(t)
   }

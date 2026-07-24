@@ -380,9 +380,12 @@ section { padding: 96px 0; }
 /* ── Before / After Lumeli ── */
 .beforeafter { padding: 0 0 120px; }
 /* scroll-driven crossfade (script.js adds .enhanced when motion is allowed):
-   the section keeps its compact one-scene height and scrolls normally —
-   Before dissolves into After as the stage rises through the viewport,
-   with the next section visible below throughout */
+   the stage anchors briefly (short sticky runway) so Before holds and the
+   dissolve gets room to register — then releases into the Signals band */
+.beforeafter.enhanced { height: 175vh; padding-bottom: 0; }
+.enhanced .ba-sticky {
+  position: sticky; top: max(24px, calc(50vh - 360px));
+}
 .enhanced .ba-block { margin-bottom: 0; }
 .enhanced .ba-block:nth-child(2) {
   position: absolute; top: 0; left: 0; right: 0;
