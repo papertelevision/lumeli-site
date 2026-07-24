@@ -62,3 +62,22 @@ if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 } else if (bird) {
   bird.dataset.frame = '5'
 }
+
+// Before/After: pin the stage and crossfade the scenes with scroll.
+const baWrap = document.querySelector('.beforeafter')
+const baBlocks = baWrap ? baWrap.querySelectorAll('.ba-block') : []
+if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  baWrap.classList.add('enhanced')
+  const baScroll = () => {
+    const runway = baWrap.offsetHeight - window.innerHeight
+    if (runway <= 0) return
+    const p = Math.min(1, Math.max(0, -baWrap.getBoundingClientRect().top / runway))
+    // crossfade through the middle of the runway
+    const t = Math.min(1, Math.max(0, (p - 0.35) / 0.3))
+    baBlocks[0].style.opacity = String(1 - t)
+    baBlocks[1].style.opacity = String(t)
+  }
+  baScroll()
+  window.addEventListener('scroll', baScroll, { passive: true })
+  window.addEventListener('resize', baScroll, { passive: true })
+}

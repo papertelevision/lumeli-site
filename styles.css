@@ -379,6 +379,24 @@ section { padding: 96px 0; }
 
 /* ── Before / After Lumeli ── */
 .beforeafter { padding: 0 0 120px; }
+/* scroll-pinned crossfade (script.js adds .enhanced when motion is allowed):
+   the tall section provides the scroll runway; the sticky stage holds both
+   scenes in one spot while Before dissolves into After */
+.beforeafter.enhanced { height: 210vh; padding-bottom: 0; }
+.enhanced .ba-sticky {
+  position: sticky; top: max(30px, calc(50vh - 330px));
+}
+.enhanced .ba-block { margin-bottom: 0; }
+.enhanced .ba-block:nth-child(2) {
+  position: absolute; top: 0; left: 0; right: 0;
+  width: 100%; opacity: 0;
+}
+/* the After scene's own entrance animations are superseded by the crossfade */
+.enhanced .ba-block:nth-child(2) .fade-up,
+.enhanced .ba-block:nth-child(2) .pop-in {
+  opacity: 1; transform: none; transition: none;
+}
+.ba-sticky { position: relative; }
 .ba-block {
   display: flex; justify-content: center;
   margin-bottom: 96px;
