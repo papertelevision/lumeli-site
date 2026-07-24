@@ -93,4 +93,15 @@ if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-moti
     },
     { passive: false }
   )
+  // touch devices have no wheel events — fall back to a position-driven fade
+  if (window.matchMedia('(pointer: coarse)').matches) {
+    const baTouchScroll = () => {
+      const rect = baStage.getBoundingClientRect()
+      const vh = window.innerHeight
+      baProg = Math.min(1, Math.max(0, (vh * 0.7 - rect.top) / (vh * 0.4)))
+      baApply()
+    }
+    baTouchScroll()
+    window.addEventListener('scroll', baTouchScroll, { passive: true })
+  }
 }
