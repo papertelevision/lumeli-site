@@ -68,17 +68,20 @@ const baWrap = document.querySelector('.beforeafter')
 const baBlocks = baWrap ? baWrap.querySelectorAll('.ba-block') : []
 if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   baWrap.classList.add('enhanced')
+  const RUNWAY = 300 // extra anchored scroll — short, so the band below stays on screen
+  const baSticky = baWrap.querySelector('.ba-sticky')
+  const baSize = () => {
+    baWrap.style.height = `${baSticky.offsetHeight + RUNWAY}px`
+  }
   const baScroll = () => {
-    const runway = baWrap.offsetHeight - window.innerHeight
-    if (runway <= 0) return
-    const p = Math.min(1, Math.max(0, -baWrap.getBoundingClientRect().top / runway))
-    // hold Before through the first quarter, dissolve through the middle,
-    // hold After for the final fifth before release
-    const t = Math.min(1, Math.max(0, (p - 0.25) / 0.55))
+    const p = Math.min(1, Math.max(0, -baWrap.getBoundingClientRect().top / RUNWAY))
+    // brief hold, dissolve, brief hold — all while the stage is anchored
+    const t = Math.min(1, Math.max(0, (p - 0.15) / 0.7))
     baBlocks[0].style.opacity = String(1 - t)
     baBlocks[1].style.opacity = String(t)
   }
+  baSize()
   baScroll()
   window.addEventListener('scroll', baScroll, { passive: true })
-  window.addEventListener('resize', baScroll, { passive: true })
+  window.addEventListener('resize', () => { baSize(); baScroll() }, { passive: true })
 }
