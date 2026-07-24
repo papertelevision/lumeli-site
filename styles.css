@@ -407,7 +407,10 @@ section { padding: 96px 0; }
 
 /* ── Showcase: intro copy left, Signals mockup right ── */
 .showcase {
-  padding: 90px 0 130px; /* room inside the torn-paper band */
+  /* the band's torn top edge rises halfway into the gap after the After
+     illustration; padding compensates so the content itself doesn't move */
+  margin-top: -60px;
+  padding: 150px 0 130px;
   background: url('images/signals_bg.png') no-repeat center / 100% 100%;
 }
 .showcase .container { max-width: 1640px; }
