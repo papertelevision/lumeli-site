@@ -52,7 +52,7 @@ if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const tick = setInterval(() => {
           frame++
           bird.dataset.frame = String(frame)
-          if (frame >= 3) clearInterval(tick)
+          if (frame >= 6) clearInterval(tick)
         }, FRAME_MS)
       }
     },
@@ -60,5 +60,5 @@ if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   )
   birdObserver.observe(bird)
 } else if (bird) {
-  bird.dataset.frame = '3'
+  bird.dataset.frame = '6'
 }
