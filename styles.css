@@ -411,7 +411,7 @@ section { padding: 96px 0; }
      illustration; padding compensates so the content itself doesn't move */
   margin-top: -60px;
   padding: 150px 0 130px;
-  background: url('images/signals_bg.png') no-repeat center / 100% 93%;
+  background: url('images/signals_bg.png') no-repeat center calc(50% - 15px) / 100% 93%;
 }
 .showcase .container { max-width: 1640px; }
 .showcase-split {
