@@ -68,20 +68,29 @@ const baWrap = document.querySelector('.beforeafter')
 const baBlocks = baWrap ? baWrap.querySelectorAll('.ba-block') : []
 if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   baWrap.classList.add('enhanced')
-  const RUNWAY = 300 // extra anchored scroll — short, so the band below stays on screen
-  const baSticky = baWrap.querySelector('.ba-sticky')
-  const baSize = () => {
-    baWrap.style.height = `${baSticky.offsetHeight + RUNWAY}px`
+  const baStage = baWrap.querySelector('.ba-sticky')
+  let baProg = 0
+  const baApply = () => {
+    baBlocks[0].style.opacity = String(1 - baProg)
+    baBlocks[1].style.opacity = String(baProg)
   }
-  const baScroll = () => {
-    const p = Math.min(1, Math.max(0, -baWrap.getBoundingClientRect().top / RUNWAY))
-    // brief hold, dissolve, brief hold — all while the stage is anchored
-    const t = Math.min(1, Math.max(0, (p - 0.15) / 0.7))
-    baBlocks[0].style.opacity = String(1 - t)
-    baBlocks[1].style.opacity = String(t)
-  }
-  baSize()
-  baScroll()
-  window.addEventListener('scroll', baScroll, { passive: true })
-  window.addEventListener('resize', () => { baSize(); baScroll() }, { passive: true })
+  baApply()
+  window.addEventListener(
+    'wheel',
+    (e) => {
+      const rect = baStage.getBoundingClientRect()
+      const anchor = Math.max(24, (window.innerHeight - rect.height) / 2)
+      const down = e.deltaY > 0
+      const engaged = down
+        ? rect.top <= anchor + 40 && rect.bottom > 200 && baProg < 1
+        : rect.top >= anchor - 40 && rect.top < window.innerHeight - 100 && baProg > 0
+      if (!engaged) return
+      e.preventDefault()
+      // keep the stage glued to its resting spot while the dissolve runs
+      if (Math.abs(rect.top - anchor) > 2) window.scrollBy(0, rect.top - anchor)
+      baProg = Math.min(1, Math.max(0, baProg + e.deltaY / 700))
+      baApply()
+    },
+    { passive: false }
+  )
 }

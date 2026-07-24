@@ -382,12 +382,8 @@ section { padding: 96px 0; }
 /* scroll-driven crossfade (script.js adds .enhanced when motion is allowed):
    the stage anchors briefly (short sticky runway) so Before holds and the
    dissolve gets room to register — then releases into the Signals band */
-/* script.js sizes the runway to stage-height + 300px, so the Signals band
-   peeks beneath the stage the whole time the dissolve is anchored */
-.beforeafter.enhanced { padding-bottom: 0; }
-.enhanced .ba-sticky {
-  position: sticky; top: 24px;
-}
+/* the layout stays fully static — script.js consumes wheel input while the
+   stage is at rest to drive the Before→After dissolve in place */
 .enhanced .ba-block { margin-bottom: 0; }
 .enhanced .ba-block:nth-child(2) {
   position: absolute; top: 0; left: 0; right: 0;
