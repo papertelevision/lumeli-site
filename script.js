@@ -71,8 +71,11 @@ if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-moti
   const baStage = baWrap.querySelector('.ba-sticky')
   let baProg = 0
   const baApply = () => {
-    baBlocks[0].style.opacity = String(1 - baProg)
-    baBlocks[1].style.opacity = String(baProg)
+    // the first stretch of captured scroll HOLDS on Before so it registers;
+    // the dissolve occupies the remainder
+    const t = Math.min(1, Math.max(0, (baProg - 0.3) / 0.7))
+    baBlocks[0].style.opacity = String(1 - t)
+    baBlocks[1].style.opacity = String(t)
   }
   baApply()
   window.addEventListener(
