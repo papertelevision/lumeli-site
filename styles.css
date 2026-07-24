@@ -554,7 +554,7 @@ section { padding: 96px 0; }
 .mock-signals { position: absolute; top: 16px; left: 0; width: 640px; background: #f8f2e5; }
 .mock-chrome {
   display: flex; align-items: center; gap: 7px; height: 36px; padding: 0 14px;
-  background: var(--linen); border-bottom: 1px solid var(--sage-line); position: relative;
+  background: var(--linen); position: relative;
 }
 .dot { width: 11px; height: 11px; border-radius: 50%; }
 .dot-r { background: #e8a79a; }
