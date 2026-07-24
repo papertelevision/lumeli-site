@@ -81,7 +81,7 @@ h3 { font-size: 23px; margin-bottom: 10px; }
   transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
 }
 .btn-primary { background: var(--clay); color: #fff; padding: 12px 28px; }
-.btn-primary:hover { background: var(--clay-deep); transform: translateY(-1px); box-shadow: var(--shadow-lift); }
+.btn-primary:hover { background: #a2beab; transform: translateY(-1px); box-shadow: var(--shadow-lift); }
 .btn-nav { padding: 9px 20px; font-size: 13.5px; }
 .btn-lg { padding: 15px 36px; font-size: 16.5px; }
 
