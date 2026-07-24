@@ -378,7 +378,7 @@ section { padding: 96px 0; }
 .why-bird[data-frame="5"] .why-bird-frame:nth-child(6) { opacity: 1; }
 
 /* ── Before / After Lumeli ── */
-.beforeafter { padding: 0 0 120px; }
+.beforeafter { padding: 0 0 135px; }
 /* scroll-driven crossfade (script.js adds .enhanced when motion is allowed):
    the stage anchors briefly (short sticky runway) so Before holds and the
    dissolve gets room to register — then releases into the Signals band */
