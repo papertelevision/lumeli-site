@@ -273,14 +273,14 @@ section { padding: 96px 0; }
 .vign-type.type-task { background: var(--clay-tint); color: var(--clay); }
 .vign-type.type-follow_up { background: var(--sage-soft); color: var(--ink-soft); }
 
-.day-arc { position: relative; display: flex; justify-content: space-between; padding: 0 6px; width: 100%; }
+.day-arc { position: relative; display: flex; justify-content: space-between; padding: 0; width: 100%; }
 .arc-icon { display: block; width: min(110px, 90%); height: auto; margin-bottom: 14px; }
 .arc-line {
-  position: absolute; top: 120px; left: 8%; right: 8%; height: 2px; /* threads the dot centers below the icons */
+  position: absolute; top: 120px; left: 0; right: 0; height: 2px; /* threads the dot centers below the icons */
   background: linear-gradient(90deg, var(--gold), var(--clay), var(--sea), var(--ink-faint));
   opacity: 0.35; border-radius: 2px;
 }
-.arc-stop { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; width: 25%; }
+.arc-stop { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; width: auto; }
 .arc-dot { width: 12px; height: 12px; border-radius: 50%; border: 3px solid var(--linen); box-shadow: var(--shadow-soft); margin-top: -4px; }
 .arc-name { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); }
 .arc-word { font-family: var(--font-display); font-style: italic; font-size: 15.5px; color: var(--ink); }
