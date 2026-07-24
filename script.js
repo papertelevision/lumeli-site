@@ -73,7 +73,7 @@ if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-moti
   const baApply = () => {
     // the first stretch of captured scroll HOLDS on Before so it registers;
     // the dissolve occupies the remainder
-    const t = Math.min(1, Math.max(0, (baProg - 0.3) / 0.7))
+    const t = Math.min(1, Math.max(0, (baProg - 0.6) / 0.4))
     baBlocks[0].style.opacity = String(1 - t)
     baBlocks[1].style.opacity = String(t)
   }
@@ -91,7 +91,7 @@ if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-moti
       e.preventDefault()
       // keep the stage glued to its resting spot while the dissolve runs
       if (Math.abs(rect.top - anchor) > 2) window.scrollBy(0, rect.top - anchor)
-      baProg = Math.min(1, Math.max(0, baProg + e.deltaY / 700))
+      baProg = Math.min(1, Math.max(0, baProg + e.deltaY / 1050))
       baApply()
     },
     { passive: false }
