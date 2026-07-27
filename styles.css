@@ -71,7 +71,6 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 
 .body-lg { font-size: 18px; color: var(--ink-soft); max-width: 42em; margin: 0 auto; }
 .microcopy { font-size: 13px; color: var(--ink-faint); }
-.microcopy.center { text-align: center; margin-top: 18px; }
 
 /* ── Buttons ── */
 .btn {
@@ -474,7 +473,7 @@ section { padding: 96px 0; }
 .client .mock-wrap { margin-top: 56px; }
 
 /* ── Privacy ── */
-.privacy { text-align: center; }
+.privacy { text-align: center; padding-top: 40px; }
 .trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
 .trust-card {
   position: relative;
