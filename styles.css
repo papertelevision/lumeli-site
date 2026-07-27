@@ -526,6 +526,10 @@ section { padding: 96px 0; }
   border-radius: 999px; padding: 12px 22px;
 }
 .cta-row input::placeholder { color: var(--ink-faint); }
+.cta-note {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 16px; color: var(--sea); margin: 6px 0 14px;
+}
 
 /* ── Footer: full-bleed artwork band with the brand centered in its sky ── */
 .footer {

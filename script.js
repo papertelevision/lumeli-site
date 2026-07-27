@@ -108,3 +108,57 @@ if (baWrap && baBlocks.length === 2 && !window.matchMedia('(prefers-reduced-moti
     window.addEventListener('scroll', baTouchScroll, { passive: true })
   }
 }
+
+// --- Early-access form + analytics beacon ---------------------------------
+const API_BASE =
+  location.protocol === 'file:' || location.hostname === 'localhost'
+    ? 'http://localhost:3020'
+    : ''
+
+const ctaForm = document.querySelector('.cta-form')
+if (ctaForm) {
+  ctaForm.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    const emailInput = ctaForm.querySelector('input[name="email"]')
+    const button = ctaForm.querySelector('button[type="submit"]')
+    let note = ctaForm.querySelector('.cta-note')
+    if (!note) {
+      note = document.createElement('p')
+      note.className = 'cta-note'
+      ctaForm.appendChild(note)
+    }
+    button.disabled = true
+    try {
+      const res = await fetch(`${API_BASE}/api/v1/signups`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailInput.value.trim(),
+          website: ctaForm.querySelector('input[name="website"]')?.value || '',
+        }),
+      })
+      if (!res.ok) throw new Error('bad status')
+      ctaForm.querySelector('.cta-row').hidden = true
+      note.textContent = 'Lovely \u2014 you\u2019re on the list. We\u2019ll be in touch soon.'
+    } catch {
+      note.textContent = 'Hmm, that didn\u2019t go through. Mind trying again in a moment?'
+      button.disabled = false
+    }
+  })
+}
+
+// Cookieless visit beacon — one ping per page load, nothing identifying.
+;(() => {
+  const qs = new URLSearchParams(location.search)
+  const body = JSON.stringify({
+    path: location.pathname,
+    referrer: document.referrer || '',
+    utm_source: qs.get('utm_source') || '',
+  })
+  const url = `${API_BASE}/api/v1/visits`
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }))
+  } else {
+    fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true })
+  }
+})()
