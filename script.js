@@ -52,7 +52,7 @@ if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const tick = setInterval(() => {
           frame++
           bird.dataset.frame = String(frame)
-          if (frame >= 5) clearInterval(tick)
+          if (frame >= 2) clearInterval(tick)
         }, FRAME_MS)
       }
     },
@@ -60,7 +60,7 @@ if (bird && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   )
   birdObserver.observe(bird)
 } else if (bird) {
-  bird.dataset.frame = '5'
+  bird.dataset.frame = '2'
 }
 
 // Before/After: pin the stage and crossfade the scenes with scroll.

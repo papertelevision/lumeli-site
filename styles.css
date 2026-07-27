@@ -381,10 +381,7 @@ section { padding: 96px 0; }
 }
 .why-bird[data-frame="0"] .why-bird-frame:nth-child(1),
 .why-bird[data-frame="1"] .why-bird-frame:nth-child(2),
-.why-bird[data-frame="2"] .why-bird-frame:nth-child(3),
-.why-bird[data-frame="3"] .why-bird-frame:nth-child(4),
-.why-bird[data-frame="4"] .why-bird-frame:nth-child(5),
-.why-bird[data-frame="5"] .why-bird-frame:nth-child(6) { opacity: 1; }
+.why-bird[data-frame="2"] .why-bird-frame:nth-child(3) { opacity: 1; }
 
 /* ── Before / After Lumeli ── */
 .beforeafter { padding: 0 0 135px; }
@@ -920,7 +917,7 @@ section { padding: 96px 0; }
   .mock-cursor { display: none; }
   .trust-sketch-tracer { stroke-dashoffset: 0; transition: none; }
   .why-bird .why-bird-frame { transition: none; opacity: 0; }
-  .why-bird .why-bird-frame:nth-child(6) { opacity: 1; }
+  .why-bird .why-bird-frame:nth-child(3) { opacity: 1; }
   .mock-wrap .sug-pop { opacity: 1; transform: none; transition: none; }
   .mock-wrap .mock-group-label.spaced { opacity: 1; transition: none; }
   /* the ANYTIME label arrives together with its card */
