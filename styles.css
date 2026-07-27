@@ -122,6 +122,13 @@ h3 { font-size: 23px; margin-bottom: 10px; }
 }
 .hero > .container { max-width: 1640px; width: 100%; } /* edge matches the nav's */
 .hero-copy { position: relative; z-index: 1; text-align: left; max-width: 640px; transform: translateY(-15px); }
+/* on large windows the headline keeps growing toward the 50% mark instead
+   of leaving dead cream — both curves are continuous at the 1300px seam
+   (6vw hits the 78px cap exactly there) */
+@media (min-width: 1300px) {
+  .hero-copy { max-width: calc(640px + (100vw - 1300px) * 0.35); }
+  .hero-copy h1 { font-size: calc(78px + (100vw - 1300px) * 0.045); }
+}
 .hero-sub {
   font-size: 19px; color: var(--ink-soft);
   max-width: 26em; margin: 22px 0 0; line-height: 1.65;
