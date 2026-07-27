@@ -22,7 +22,7 @@ Minimal nginx server block (`/etc/nginx/sites-available/lumeli`):
 ```nginx
 server {
   listen 80;
-  server_name lumeli.com www.lumeli.com;
+  server_name lumeli.ai www.lumeli.ai;
   root /var/www/lumeli;
   index index.html;
   try_files $uri $uri/ =404;
@@ -37,7 +37,7 @@ ln -s /etc/nginx/sites-available/lumeli /etc/nginx/sites-enabled/
 nginx -t && systemctl reload nginx
 ```
 
-HTTPS: `certbot --nginx -d lumeli.com -d www.lumeli.com`
+HTTPS: `certbot --nginx -d lumeli.ai -d www.lumeli.ai`
 
 ## Backend (signups + analytics + admin)
 
