@@ -689,7 +689,7 @@ section { padding: 96px 0; }
   font-size: 10px; padding: 1px 7px;
 }
 .mock-topbar-clock {
-  margin-left: auto; font-size: 12.5px; color: var(--ink); flex-shrink: 0;
+  margin-left: auto; font-size: 11.5px; color: var(--ink); flex-shrink: 0;
 }
 .mock-search {
   background: var(--card); border: 1px solid var(--sage-line); border-radius: 999px;
@@ -698,10 +698,10 @@ section { padding: 96px 0; }
 }
 .mock-tab {
   display: inline-flex; align-items: center; gap: 7px;
-  font-size: 12.5px; font-weight: 600; color: var(--ink-soft);
+  font-size: 11.5px; font-weight: 600; color: var(--ink-soft);
   border-radius: 999px; padding: 6px 15px; border: 1px solid transparent;
 }
-.mock-tab.active { background: var(--card); border-color: var(--sage-line); color: var(--ink); font-weight: 700; }
+.mock-tab.active { background: var(--card); border-color: var(--sage-line); color: var(--ink); font-weight: 700; padding: 5px 16px; }
 .acct-dot { width: 7px; height: 7px; border-radius: 50%; }
 
 .mock-mail-body { display: flex; height: 428px; }
