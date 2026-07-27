@@ -1,0 +1,22 @@
+# Deploys the site to the DigitalOcean droplet on every push to main:
+# SSHes in and fast-forwards the checkout that nginx serves.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull latest on droplet
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          script: |
+            cd /var/www/lumeli
+            git fetch origin main
+            git reset --hard origin/main
