@@ -934,7 +934,11 @@ section { padding: 96px 0; }
   .beat { grid-template-columns: 1fr; gap: 34px; margin-bottom: 72px; }
   .beat-flip .beat-copy { order: 1; }
   .beat-flip .beat-art { order: 2; }
-  .beat-art { display: flex; justify-content: center; }
+  /* column, not row — the signal vignettes must stack like they do on desktop */
+  .beat-art { display: flex; flex-direction: column; align-items: center; }
+  .vign-card { max-width: min(420px, 100%); }
+  .vign-wide { max-width: min(470px, 100%); }
+  .vign-title { white-space: normal; }
   .moments, .trust { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
 }
 
@@ -943,5 +947,6 @@ section { padding: 96px 0; }
   .cta-row { flex-direction: column; }
   .cta-row .btn { width: 100%; }
   .footer-row { flex-direction: column; align-items: flex-start; }
-  .vign-offset { margin-left: 16px; }
+  .vign-offset { margin-left: 0; align-self: stretch; }
+  .vign-card { max-width: 100%; }
 }
