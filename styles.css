@@ -437,7 +437,7 @@ section { padding: 96px 0; }
 }
 .showcase .container { max-width: 1640px; }
 /* Sources row: hand-drawn title + sketched service icons on the band paper */
-.sources { margin-top: 28px; text-align: center; }
+.sources { margin-top: 44px; text-align: center; }
 .sources-title { width: min(450px, 84%); height: auto; }
 .sources-row {
   margin-top: 48px;
