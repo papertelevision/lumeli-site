@@ -438,9 +438,9 @@ section { padding: 96px 0; }
 .showcase .container { max-width: 1640px; }
 /* Sources row: hand-drawn title + sketched service icons on the band paper */
 .sources { margin-top: 28px; text-align: center; }
-.sources-title { width: min(470px, 84%); height: auto; }
+.sources-title { width: min(450px, 84%); height: auto; }
 .sources-row {
-  margin-top: 60px;
+  margin-top: 48px;
   display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end;
   column-gap: clamp(22px, 4vw, 70px); row-gap: 44px;
 }
