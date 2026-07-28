@@ -432,7 +432,7 @@ section { padding: 96px 0; }
   /* the band's torn top edge rises halfway into the gap after the After
      illustration; padding compensates so the content itself doesn't move */
   margin-top: -60px;
-  padding: 150px 0 190px;
+  padding: 150px 0 152px;
   background: url('images/signals_bg.png') no-repeat center calc(50% - 15px) / 100% 93%;
 }
 .showcase .container { max-width: 1640px; }
