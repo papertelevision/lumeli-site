@@ -22,7 +22,7 @@
 
     <header class="nav">
       <a href="#top" class="nav-logo-link"><img class="nav-logo" src="images/logo_header.png" alt="Lumeli" width="595" height="165" /></a>
-      <a class="btn btn-primary btn-nav" href="#get-lumeli">Get Lumeli free</a>
+      <a class="btn btn-primary btn-nav" href="join/index.html">Join the beta</a>
     </header>
 
     <main id="main">
@@ -45,8 +45,8 @@
               workday knowing nothing important was forgotten.
             </p>
             <div class="hero-cta">
-              <a class="btn btn-primary btn-lg" href="#get-lumeli">Get Lumeli free</a>
-              <p class="microcopy">Free for macOS&ensp;·&ensp;No credit card</p>
+              <a class="btn btn-primary btn-lg" href="join/index.html">Apply for a founding spot</a>
+              <p class="microcopy">No credit card&ensp;·&ensp;Secure &amp; Private</p>
             </div>
           </div>
         </div>
@@ -419,72 +419,366 @@
 
         <!-- Mockup 2: the email page -->
         <div class="container mock-wrap fade-up" aria-hidden="true">
-          <div class="mock-viewport mock-viewport-mail">
+          <div class="mock-viewport mock-viewport-mail" data-dw="1240">
             <div class="mock-stage mock-stage-mail">
               <div class="mock-window mock-mail">
-                <div class="mock-topbar">
+                <!-- unified topbar -->
+                <div class="mm-topbar">
                   <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-                  <span class="mock-signals-pill">◉ <b>3</b></span>
-                  <span class="mock-tab active"><span class="acct-dot" style="background: var(--clay)"></span>Personal</span>
-                  <span class="mock-tab"><span class="acct-dot" style="background: var(--sea)"></span>Work</span>
-                  <span class="mock-tab">All Inboxes</span>
-                  <span class="mock-topbar-clock">3:51 PM</span>
-                  <span class="mock-search">Search mail…</span>
+                  <span class="mm-signals">
+                    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.4" fill="currentColor"/><path d="M7.7 16.3a6 6 0 0 1 0-8.6 M16.3 7.7a6 6 0 0 1 0 8.6 M4.9 19.1a10 10 0 0 1 0-14.2 M19.1 4.9a10 10 0 0 1 0 14.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    <b>9</b>
+                  </span>
+                  <span class="mm-account">
+                    <span class="mm-acct-dot"></span>All Inboxes
+                    <svg class="mm-caret" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="mm-gear">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="mm-search">Search mail…</span>
                 </div>
-                <div class="mock-mail-body">
-                  <div class="mock-list">
-                    <div class="mock-thread unread">
-                      <span class="mt-top"><b>Riverbend Studio</b><time>9:41 AM</time></span>
-                      <span class="mt-subj">Invoice for March services</span>
-                      <span class="mt-snip">Hi — just checking whether the updated…</span>
+
+                <div class="mm-body">
+                  <!-- collapsed left rail -->
+                  <div class="mm-rail">
+                    <span class="mm-compose"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 4.5 L19.5 9.5 L9 20 L4 20 L4 15 Z M13 6 L18 11" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="mm-nav active"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 13.5 L6 6 a1.5 1.5 0 0 1 1.4 -1 h9.2 a1.5 1.5 0 0 1 1.4 1 L20.5 13.5 V17.5 a1.5 1.5 0 0 1 -1.5 1.5 H5 a1.5 1.5 0 0 1 -1.5 -1.5 Z M3.5 13.5 H8.5 a3.5 3.5 0 0 0 7 0 H20.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="mm-nav"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="mm-nav"><svg viewBox="0 0 24 24" fill="none"><path d="M21 4 L3.6 10.5 a0.8 0.8 0 0 0 0.05 1.5 L10 14 L12 20.3 a0.8 0.8 0 0 0 1.5 0.06 Z M10 14 L21 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="mm-nav"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3.5 h7 L18.5 8 V19 a1.5 1.5 0 0 1 -1.5 1.5 H7 A1.5 1.5 0 0 1 5.5 19 V5 A1.5 1.5 0 0 1 7 3.5 Z M14 3.5 V8 H18.5 M8.5 13 h7 M8.5 16.5 h4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="mm-nav"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.8"/><path d="M6.4 6.4 L17.6 17.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+                    <span class="mm-nav"><svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    <span class="mm-nav"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H10l-4.2 3.4c-.5.4-1.3.05-1.3-.6V6.5z M8.5 9h7M8.5 12h4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  </div>
+
+                  <!-- email list -->
+                  <div class="mm-listcol">
+                    <div class="mm-cats">
+                      <span class="mm-cat active">Primary</span>
+                      <span class="mm-cat">Promotions</span>
+                      <span class="mm-cat">Social</span>
+                      <span class="mm-sort">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M8 12 V4 M5 7 L8 4 L11 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M8 4 V12 M5 9 L8 12 L11 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
                     </div>
-                    <div class="mock-thread unread">
-                      <span class="mt-top"><b>Harbor &amp; Pine Events</b><time>8:56 AM</time></span>
-                      <span class="mt-subj">Venue hold: Sept 12</span>
-                      <span class="mt-snip">We can pencil you in through Friday if…</span>
-                    </div>
-                    <div class="mock-thread selected">
-                      <span class="mt-top">Cedar Cove Rentals<time>Mon</time></span>
-                      <span class="mt-subj">Re: Timeline check-in</span>
-                      <span class="mt-snip">Thanks for the update — one question…</span>
-                      <span class="mock-thread-signal">↑ owe</span>
-                    </div>
-                    <div class="mock-thread">
-                      <span class="mt-top">Fern &amp; Foundry<time>Yesterday</time></span>
-                      <span class="mt-subj">Your order has shipped</span>
-                      <span class="mt-snip">It’s on the way — track your package…</span>
-                    </div>
-                    <div class="mock-thread">
-                      <span class="mt-top">The Slow Work Letter<time>Mon</time></span>
-                      <span class="mt-subj">Issue 42: On finishing</span>
-                      <span class="mt-snip">This week: why done matters more than…</span>
+                    <div class="mock-list">
+                      <div class="mock-thread selected">
+                        <span class="mm-check"></span>
+                        <span class="mm-dot" style="background: var(--sea)"></span>
+                        <span class="mm-row">
+                          <span class="mt-top"><b>Cedar Cove Rentals</b><time>9:41 AM</time></span>
+                          <span class="mt-subj">Re: Timeline check-in</span>
+                          <span class="mt-snip">Thanks for the update — one quick question about the delivery timeline before we…</span>
+                        </span>
+                      </div>
+                      <div class="mock-thread unread">
+                        <span class="mm-check"></span>
+                        <span class="mm-dot"></span>
+                        <span class="mm-row">
+                          <span class="mt-top"><b>Nadia Okafor</b><time>9:12 AM</time></span>
+                          <span class="mt-subj">Q3 partner rollout — your go-ahead?</span>
+                          <span class="mt-snip">Everything’s staged on our side. Just need your sign-off to lock the launch date…</span>
+                        </span>
+                      </div>
+                      <div class="mock-thread unread">
+                        <span class="mm-check"></span>
+                        <span class="mm-dot"></span>
+                        <span class="mm-row">
+                          <span class="mt-top"><b>Riverbend Studio</b><time>8:56 AM</time></span>
+                          <span class="mt-subj">Invoice for March services</span>
+                          <span class="mt-snip">Hi — just checking whether the updated invoice reached your accounts team…</span>
+                        </span>
+                      </div>
+                      <div class="mock-thread unread">
+                        <span class="mm-check"></span>
+                        <span class="mm-dot"></span>
+                        <span class="mm-row">
+                          <span class="mt-top"><b>Harbor &amp; Pine Events</b><time>Yesterday</time></span>
+                          <span class="mt-subj">Venue hold expires Friday</span>
+                          <span class="mt-snip">We can hold the Sept 12 date through Friday if you’d like to confirm the booking…</span>
+                        </span>
+                      </div>
+                      <div class="mock-thread">
+                        <span class="mm-check"></span>
+                        <span class="mm-dot muted"></span>
+                        <span class="mm-row">
+                          <span class="mt-top">Priya Raman<time>Yesterday</time></span>
+                          <span class="mt-subj read">Revised pricing sheet</span>
+                          <span class="mt-snip">Following up from our call — could you send the updated numbers when you get a sec?</span>
+                        </span>
+                      </div>
+                      <div class="mock-thread">
+                        <span class="mm-check"></span>
+                        <span class="mm-dot muted"></span>
+                        <span class="mm-row">
+                          <span class="mt-top">Marcus Bell<time>Mon</time></span>
+                          <span class="mt-subj read">Beta feedback digest</span>
+                          <span class="mt-snip">Shared the latest round of notes — curious what you’d want to prioritize next…</span>
+                        </span>
+                      </div>
+                      <div class="mock-thread">
+                        <span class="mm-check"></span>
+                        <span class="mm-dot muted"></span>
+                        <span class="mm-row">
+                          <span class="mt-top">The Slow Work Letter<time>Mon</time></span>
+                          <span class="mt-subj read">Issue 42: On finishing</span>
+                          <span class="mt-snip">This week: why “done” matters more than “more,” and how to protect a calm week…</span>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div class="mock-pane">
-                    <div class="mock-field">To&ensp;<span>bookings@cedarcove.example</span></div>
-                    <div class="mock-field">Subject&ensp;<span>Re: Timeline check-in</span></div>
-                    <div class="mock-compose">
-                      <p class="mock-body-text">Hi Dana,</p>
-                      <p class="mock-body-text">
-                        Thanks so much <span class="sug-underline">for you</span> patience while we
-                        wrapped this up. The updated timeline is attached, and we should
-                        <span class="sug-underline-spelling">recieve</span> the final assets by
-                        Thursday morning.
-                      </p>
-                      <p class="mock-body-text">
-                        If anything looks off, just say the word and I’ll adjust —
-                        otherwise <span class="sug-underline">its</span> all on track for a calm
-                        launch next week.
-                      </p>
-                      <p class="mock-body-text">Warmly,<br />Sam</p>
-                      <div class="sug-pop">
-                        <span class="sug-pop-q">Did you mean <b>“receive”</b>?</span>
-                        <span class="sug-pop-note">This is a common typo, but remember the rule “i before e, except after c.”</span>
-                        <span class="sug-pop-actions"><b class="fix">receive</b><i>Ignore</i></span>
-                      </div>
-                      <span class="mock-cursor"></span>
+
+                  <!-- reading pane: composing a reply, with live writing suggestions -->
+                  <div class="mm-read">
+                    <div class="mm-read-nav">
+                      <span>‹</span><span class="mm-read-next">›</span>
                     </div>
-                    <span class="mock-send">Send</span>
+                    <div class="mm-composer">
+                      <div class="mm-comp-head">
+                        <strong>Reply</strong>
+                        <span class="mm-from">sam@meadowlark.co</span>
+                      </div>
+                      <div class="mm-to-row">
+                        <span class="mm-chip">dana@cedarcove.co <i>×</i></span>
+                        <span class="mm-ccbcc"><span>Cc</span><span>Bcc</span></span>
+                      </div>
+                      <div class="mm-subject">Re: Timeline check-in</div>
+                      <div class="mm-comp-body">
+                        <p>Hi Dana,</p>
+                        <p>
+                          Thanks so much <span class="sug-underline">for you</span> patience while we
+                          wrapped this up. The updated timeline is attached, and we should
+                          <span class="sug-underline-spelling">recieve</span> the final assets by
+                          Thursday morning.
+                        </p>
+                        <p>
+                          If anything looks off, just say the word and I’ll adjust — otherwise
+                          <span class="sug-underline">its</span> all on track for a calm launch next week.
+                        </p>
+                        <p>Warmly,<br />Sam</p>
+                        <div class="sug-pop">
+                          <span class="sug-pop-q">Did you mean <b>“receive”</b>?</span>
+                          <span class="sug-pop-note">This is a common typo, but remember the rule “i before e, except after c.”</span>
+                          <span class="sug-pop-actions"><b class="fix">receive</b><i>Ignore</i></span>
+                        </div>
+                        <span class="mock-cursor"></span>
+                      </div>
+                      <div class="mm-footer">
+                        <span class="mm-send">Send</span>
+                        <span class="mm-btn"><svg viewBox="0 0 24 24" fill="none"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.41 17.41a2 2 0 0 1-2.83-2.83l8.49-8.48" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Attach</span>
+                        <span class="mm-btn">Close</span>
+                        <span class="mm-footer-right">
+                          <span class="mm-icon-btn spark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5c.9 3.9 2.7 5.7 6.5 6.5-3.8.8-5.6 2.6-6.5 6.5-.9-3.9-2.7-5.7-6.5-6.5 3.8-.8 5.6-2.6 6.5-6.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18.6 15.2c.4 1.7 1.2 2.5 2.9 2.9-1.7.4-2.5 1.2-2.9 2.9-.4-1.7-1.2-2.5-2.9-2.9 1.7-.4 2.5-1.2 2.9-2.9z" fill="currentColor"/></svg></span>
+                          <span class="mm-icon-btn"><svg viewBox="0 0 24 24" fill="none"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66L9.41 17.41a2 2 0 0 1-2.83-2.83l8.49-8.48" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                          <span class="mm-btn">Discard</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Loops ────────────────────────────────────────────── -->
+      <section class="loops-section" id="loops" aria-labelledby="loops-title">
+        <div class="container narrow fade-up">
+          <h2 id="loops-title">Every thread,<br />one story.</h2>
+          <p class="body-lg">
+            Real work rarely lives in one place. A commitment might begin in an email, turn into a
+            meeting, and carry on in chat. Loops quietly stitch those moments together — following
+            the ball between you and everyone else — so you always know where something stands and
+            whose move is next.
+          </p>
+        </div>
+
+        <!-- Mockup 3: the Loops page -->
+        <div class="container mock-wrap fade-up" aria-hidden="true">
+          <div class="mock-viewport mock-viewport-loops" data-dw="1180">
+            <div class="mock-stage mock-stage-loops">
+              <div class="mock-window mock-loops">
+                <div class="mkl-header">
+                  <span class="mkl-title">Loops</span>
+                  <span class="mkl-sort">
+                    <span class="mkl-chip">Recent</span>
+                    <span class="mkl-chip active">Longest running</span>
+                    <span class="mkl-chip">Most handoffs</span>
+                  </span>
+                </div>
+                <div class="mkl-layout">
+                  <svg class="mkl-connector" aria-hidden="true">
+                    <path d="M 430 86 H 450 V 15 H 468" pathLength="1" />
+                  </svg>
+
+                  <div class="mkl-list">
+                    <div class="mkl-group-label">Came full circle <b>34</b></div>
+                    <div class="mkl-card selected">
+                      <span class="mkl-card-top">
+                        <span class="mkl-dir owe">↑</span>
+                        <span class="mkl-summary">Ship the Q3 partner rollout with Nadia</span>
+                      </span>
+                      <span class="mkl-card-mid">
+                        <span class="mkl-cp"><span class="mkl-acct" style="background: var(--clay)"></span>Nadia Okafor</span>
+                        <span class="mkl-crumbs">
+                          <span class="mkl-crumb">Email</span><span class="mkl-arrow">→</span>
+                          <span class="mkl-crumb">Calendar</span><span class="mkl-arrow">→</span>
+                          <span class="mkl-crumb">Slack</span>
+                        </span>
+                      </span>
+                      <span class="mkl-ai">What began as a single email became a kickoff, a shared Slack channel, and a signed-off launch — now live.</span>
+                      <span class="mkl-stats">Closed in 11 days · 7 handoffs · 9 signals</span>
+                    </div>
+
+                    <div class="mkl-card">
+                      <span class="mkl-card-top">
+                        <span class="mkl-dir owe">↑</span>
+                        <span class="mkl-summary">Wrap the Q2 invoice dispute with Tomas</span>
+                      </span>
+                      <span class="mkl-card-mid">
+                        <span class="mkl-cp"><span class="mkl-acct" style="background: var(--gold)"></span>Tomas Ferrer</span>
+                        <span class="mkl-crumbs">
+                          <span class="mkl-crumb">Email</span><span class="mkl-arrow">→</span>
+                          <span class="mkl-crumb">Video Call</span>
+                        </span>
+                      </span>
+                      <span class="mkl-ai">You and Tomas settled the disputed line items and closed the invoice.</span>
+                      <span class="mkl-stats">Closed in 5 days · 3 handoffs · 4 signals</span>
+                    </div>
+
+                    <div class="mkl-group-label mkl-group-label--spaced">Still in motion <b>12</b></div>
+                    <div class="mkl-card">
+                      <span class="mkl-card-top">
+                        <span class="mkl-dir owe">↑</span>
+                        <span class="mkl-summary">Send the updated pricing sheet to Priya</span>
+                      </span>
+                      <span class="mkl-card-mid">
+                        <span class="mkl-cp"><span class="mkl-acct" style="background: var(--sea)"></span>Priya Raman</span>
+                        <span class="mkl-crumbs">
+                          <span class="mkl-crumb">Email</span><span class="mkl-arrow">→</span>
+                          <span class="mkl-crumb">Video Call</span>
+                        </span>
+                      </span>
+                      <span class="mkl-ai">Priya asked for revised pricing during your Google Meet call; the ball’s in your court to send it over.</span>
+                      <span class="mkl-stats">Day 4 · 2 handoffs · 3 signals</span>
+                    </div>
+
+                    <div class="mkl-card">
+                      <span class="mkl-card-top">
+                        <span class="mkl-dir owe">↑</span>
+                        <span class="mkl-summary">Confirm the venue hold for the design offsite</span>
+                      </span>
+                      <span class="mkl-card-mid">
+                        <span class="mkl-cp"><span class="mkl-acct" style="background: var(--gold)"></span>Harbor &amp; Pine Events</span>
+                        <span class="mkl-crumbs">
+                          <span class="mkl-crumb">Calendar</span><span class="mkl-arrow">→</span>
+                          <span class="mkl-crumb">Email</span>
+                        </span>
+                      </span>
+                      <span class="mkl-ai">A tentative venue hold from the calendar invite expires Friday — you still need to confirm it.</span>
+                      <span class="mkl-stats">Day 3 · 1 handoff · 2 signals</span>
+                    </div>
+
+                    <div class="mkl-card">
+                      <span class="mkl-card-top">
+                        <span class="mkl-dir owed">↓</span>
+                        <span class="mkl-summary">Marcus’s read on the beta feedback digest</span>
+                      </span>
+                      <span class="mkl-card-mid">
+                        <span class="mkl-cp"><span class="mkl-acct" style="background: var(--sea)"></span>Marcus Bell</span>
+                        <span class="mkl-crumbs">
+                          <span class="mkl-crumb">Slack</span><span class="mkl-arrow">→</span>
+                          <span class="mkl-crumb">Chat</span>
+                        </span>
+                      </span>
+                      <span class="mkl-ai">You shared the beta digest and asked Marcus what to prioritize next.</span>
+                      <span class="mkl-stats">Day 2 · 1 handoff · 2 signals</span>
+                    </div>
+                  </div>
+
+                  <div class="mkl-story">
+                    <div class="mkl-story-head">
+                      <h3 class="mkl-story-title">Ship the Q3 partner rollout with Nadia</h3>
+                      <p class="mkl-story-sub">Closed in 11 days · 7 handoffs · 9 signals</p>
+                      <p class="mkl-recap">What started as one email to Nadia Okafor grew into a kickoff meeting and a shared Slack channel. You shared the plan, staged a preview, folded in her changes, and got the final launch signed off — the loop came full circle.</p>
+                    </div>
+                    <div class="mkl-timeline">
+                      <div class="mkl-event created">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">The signal was initiated in an email conversation with Nadia.</span>
+                          <span class="mkl-event-sub">Get Nadia’s buy-in on the Q3 partner rollout</span>
+                          <span class="mkl-event-meta">Aug 2 · from Email</span>
+                        </div>
+                      </div>
+                      <div class="mkl-event handoff">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">The ball went to Nadia’s court.</span>
+                          <span class="mkl-event-meta">Aug 3</span>
+                        </div>
+                      </div>
+                      <div class="mkl-event created mkl-event--linked">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-goto">Go to source</span>
+                          <span class="mkl-event-text">A meeting joined the story.</span>
+                          <span class="mkl-event-sub">Kickoff — Q3 partner rollout</span>
+                          <span class="mkl-event-meta">Aug 4 · from Calendar</span>
+                        </div>
+                        <span class="mkl-cursor" aria-hidden="true"></span>
+                      </div>
+                      <div class="mkl-event created">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">A new commitment emerged from the conversation.</span>
+                          <span class="mkl-event-sub">Share the rollout plan and staging preview</span>
+                          <span class="mkl-event-meta">Aug 5</span>
+                        </div>
+                      </div>
+                      <div class="mkl-event resolved">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">A newer message moved the signal forward.</span>
+                          <span class="mkl-event-sub">You posted the staging preview in Slack and asked Nadia to review.</span>
+                          <span class="mkl-event-meta">Aug 6 · from Slack</span>
+                        </div>
+                      </div>
+                      <div class="mkl-event handoff">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">The ball came back to you.</span>
+                          <span class="mkl-event-meta">Aug 8</span>
+                        </div>
+                      </div>
+                      <div class="mkl-event">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">The ask changed shape.</span>
+                          <span class="mkl-event-sub">Now: “Approve the final launch date”</span>
+                          <span class="mkl-event-meta">Aug 9</span>
+                        </div>
+                      </div>
+                      <div class="mkl-event created">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">A new commitment surfaced in Slack.</span>
+                          <span class="mkl-event-sub">Send Nadia the final launch plan</span>
+                          <span class="mkl-event-meta">Aug 10 · from Slack</span>
+                        </div>
+                      </div>
+                      <div class="mkl-event resolved">
+                        <span class="mkl-dot"></span>
+                        <div class="mkl-event-body">
+                          <span class="mkl-event-text">Signal resolved.</span>
+                          <span class="mkl-event-sub">You sent an email to Nadia confirming the launch plan, resolving this task.</span>
+                          <span class="mkl-event-meta">Aug 13</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -566,29 +860,39 @@
       <!-- ── Final CTA ────────────────────────────────────────── -->
       <section class="get" id="get-lumeli" aria-labelledby="get-title">
         <div class="container narrow fade-up">
-          <h2 id="get-title">Your to-do list shouldn’t follow you into dinner.</h2>
-          <p class="body-lg">
-            Lumeli is rolling out early access now. Leave your email and we’ll send your free
-            download the moment it’s ready.
-          </p>
-          <form class="cta-form" action="#" method="post">
-            <input type="text" name="website" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <label for="email" class="cta-label sr-only">Your email</label>
-            <div class="cta-row">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                autocomplete="email"
-                placeholder="you@example.com"
-              />
-              <button type="submit" class="btn btn-primary">Get Lumeli free</button>
-            </div>
-            <p class="microcopy">
-              Free for macOS&ensp;·&ensp;No credit card&ensp;·&ensp;We’ll only write to you about Lumeli.
+          <div class="get-panel">
+            <h2 id="get-title">Be one of the first hundred.</h2>
+            <p class="body-lg">
+              Lumeli is opening to 100 Founding Members. Get approved and help shape what it becomes.
             </p>
-          </form>
+            <div class="get-benefits">
+              <div class="get-benefit"><p>Use Lumeli <strong>100% free</strong> through beta.</p></div>
+              <div class="get-benefit"><p>Get <strong>50% off for life</strong> when we go live.</p></div>
+              <div class="get-benefit"><p>A <strong>direct line</strong> to our founder.</p></div>
+            </div>
+            <a class="btn btn-primary btn-lg" href="join/index.html">Apply for a founding spot</a>
+
+            <div class="get-secondary">
+              <p class="get-secondary-label">
+                Not ready to apply? Leave your email and we’ll tell you when the next door opens.
+              </p>
+              <form class="cta-form" action="#" method="post">
+                <input type="text" name="website" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <label for="email" class="cta-label sr-only">Your email</label>
+                <div class="cta-row">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                  />
+                  <button type="submit" class="btn btn-secondary">Notify me</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -597,6 +901,10 @@
       <div class="footer-brand">
         <img class="footer-logo" src="images/logo_footer.png" alt="Lumeli" width="586" height="385" />
         <p class="footer-tag">Calm productivity for MacOS</p>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="privacy/index.html">Privacy Policy</a>
+          <a href="terms/index.html">Terms of Use</a>
+        </nav>
         <p class="footer-copyright">© <span id="copyright-year">2026</span> Lumeli</p>
       </div>
     </footer>

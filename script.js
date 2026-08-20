@@ -1,12 +1,15 @@
 // Lumeli marketing site — mockup scaling + gentle scroll reveals.
 
-// Scale each fixed-880px mockup stage to fit its responsive viewport.
+// Scale each fixed-width mockup stage to fit its responsive viewport.
 const DESIGN_WIDTH = 880
 for (const viewport of document.querySelectorAll('.mock-viewport')) {
   const stage = viewport.querySelector('.mock-stage')
   if (!stage) continue
+  // A stage may declare its own design width via data-dw; denser views use a
+  // wider canvas so the app's real px sizes stay in proportion.
+  const dw = Number(viewport.dataset.dw) || DESIGN_WIDTH
   const scale = () => {
-    stage.style.transform = `scale(${viewport.clientWidth / DESIGN_WIDTH})`
+    stage.style.transform = `scale(${viewport.clientWidth / dw})`
   }
   scale()
   new ResizeObserver(scale).observe(viewport)
