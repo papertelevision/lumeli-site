@@ -9,6 +9,12 @@
       : ''
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
+  // The channel that sent them here — ?ref= wins, ?utm_source= is the fallback —
+  // so founding signups attribute to the marketing employee that drove them.
+  const refSource = () => {
+    const qs = new URLSearchParams(location.search)
+    return (qs.get('ref') || qs.get('utm_source') || '').slice(0, 40)
+  }
 
   const beats = Array.from(document.querySelectorAll('.join-beat'))
   const beatByName = (n) => document.querySelector(`.join-beat[data-beat="${n}"]`)
@@ -193,6 +199,7 @@
           current_tool: tools.join(', '),
           reason: get('reason'),
           founding: true,
+          source: refSource(),
           website: (d.get('website') || '').toString()
         })
       })
@@ -263,6 +270,7 @@
         body: JSON.stringify({
           email,
           founding: false,
+          source: refSource(),
           website: waitForm.querySelector('input[name="website"]')?.value || ''
         })
       })
